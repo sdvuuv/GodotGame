@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cbkwymocvlyb6"]
+
+[ext_resource type="Script" uid="uid://cy5pqc411fb31" path="res://scripts/enemies/guard.gd" id="1_emjg6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_emjg6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnjgc"]
+size = Vector2(62, 127)
+
+[node name="Guard" type="CharacterBody2D" unique_id=1023647203 groups=["enemy"]]
+script = ExtResource("1_emjg6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1453553300]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_emjg6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1061470656]
+offset_left = -32.0
+offset_top = -63.0
+offset_right = 32.0
+offset_bottom = 63.0
+color = Color(0.25501838, 0.13486797, 0.046119615, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="DamageZone" type="Area2D" parent="." unique_id=1479562377]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=730064697]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_vnjgc")
+
+[node name="SwordVisual" type="ColorRect" parent="." unique_id=1566569451]
+visible = false
+offset_left = 32.0
+offset_right = 52.0
+offset_bottom = 40.0
+color = Color(0.8244143, 0.5691104, 0.57959485, 1)
+
+[connection signal="body_entered" from="DamageZone" to="." method="_on_damage_zone_body_entered"]

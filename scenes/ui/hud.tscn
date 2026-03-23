@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bj74c34ddpjbk"]
+
+[ext_resource type="Script" uid="uid://c5vsc77clxy56" path="res://scripts/ui/hud.gd" id="1_0mwgc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh2we"]
+bg_color = Color(0.32744762, 0.5949868, 0.39527842, 1)
+
+[node name="HUD" type="CanvasLayer" unique_id=1573898543]
+script = ExtResource("1_0mwgc")
+
+[node name="Control" type="Control" parent="." unique_id=1601760539]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Control" unique_id=977473720]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 240.0
+offset_bottom = 70.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_wh2we")
+show_percentage = false

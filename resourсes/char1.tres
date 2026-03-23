@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://briaqlwue5h45"]
+
+[ext_resource type="Script" uid="uid://crdahgfetqi6p" path="res://scripts/characters/character_data.gd" id="1_odkyh"]
+
+[resource]
+script = ExtResource("1_odkyh")
+id = 1
+character_name = "Фрося"
+description = "????"
+placeholder_color = Color(0.73274165, 0.5985005, 0.7405503, 1)
+max_sanity = 50.0
+move_speed = 280.0
+attack_damage = 5.0
+attack_cooldown = 0.1
+is_melee = true
+metadata/_custom_type_script = "uid://crdahgfetqi6p"

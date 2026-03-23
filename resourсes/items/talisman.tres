@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b7k7v24fw4xgk"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_aqcxm"]
+
+[resource]
+script = ExtResource("1_aqcxm")
+item_name = "Талисман очищенния"
+description = "Рассееевает туман "
+item_color = Color(0.27058825, 1, 0, 1)
+add_cleansers = 1
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

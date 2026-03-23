@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://dbl5xlsdljuv0"]
+
+[ext_resource type="Script" uid="uid://crdahgfetqi6p" path="res://scripts/characters/character_data.gd" id="1_au581"]
+
+[resource]
+script = ExtResource("1_au581")
+id = 4
+character_name = "Глеб"
+description = "хлеп"
+placeholder_color = Color(0.64774835, 0.707239, 0.69309527, 1)
+max_hp = 70.0
+move_speed = 125.0
+attack_damage = 17.0
+attack_cooldown = 0.7
+projectile_speed = 350.0
+projectile_lifespan = 0.4
+metadata/_custom_type_script = "uid://crdahgfetqi6p"

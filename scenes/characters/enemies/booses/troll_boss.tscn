@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bpk0ajp7eabvw"]
+
+[ext_resource type="Script" uid="uid://buj8ut4pmn46q" path="res://scripts/enemies/bosses/troll_boss.gd" id="1_n8bi1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k0ejk"]
+radius = 40.0
+
+[node name="TrollBoss" type="CharacterBody2D" unique_id=1764256007]
+script = ExtResource("1_n8bi1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1384514106]
+shape = SubResource("CircleShape2D_k0ejk")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1504166736]
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.69135684, 0.6913568, 0.69135684, 1)

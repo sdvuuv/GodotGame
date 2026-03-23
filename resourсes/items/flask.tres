@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bvc7l4dgo048v"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_o7hsk"]
+
+[resource]
+script = ExtResource("1_o7hsk")
+item_name = "Взрывной флакон"
+description = "Взрывает сооружения"
+item_color = Color(0.89185244, 0.8010465, 0.9111544, 1)
+add_bombs = 1
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

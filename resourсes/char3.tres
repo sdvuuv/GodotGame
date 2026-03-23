@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://1k20eok60h08"]
+
+[ext_resource type="Script" uid="uid://crdahgfetqi6p" path="res://scripts/characters/character_data.gd" id="1_m7afq"]
+
+[resource]
+script = ExtResource("1_m7afq")
+id = 3
+character_name = "Патрик "
+description = "?????"
+placeholder_color = Color(1.1130236e-07, 0.23899665, 2.4065375e-08, 1)
+move_speed = 150.0
+attack_damage = 15.0
+is_melee = true
+metadata/_custom_type_script = "uid://crdahgfetqi6p"

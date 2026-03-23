@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cchfhyc0gt8w8"]
+
+[ext_resource type="Script" uid="uid://cgrie0vtlwr2u" path="res://scripts/enemies/golem.gd" id="1_dsikx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxn32"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7jb55"]
+radius = 20.0
+
+[node name="Golem" type="CharacterBody2D" unique_id=1023647203 groups=["enemy"]]
+script = ExtResource("1_dsikx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1453553300]
+shape = SubResource("CircleShape2D_rxn32")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1061470656]
+offset_left = -15.0
+offset_top = -14.0
+offset_right = 15.0
+offset_bottom = 16.0
+color = Color(0.42070025, 0.5299426, 0.44840288, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="DamageZone" type="Area2D" parent="." unique_id=1479562377]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=730064697]
+shape = SubResource("CircleShape2D_7jb55")
+
+[connection signal="body_entered" from="DamageZone" to="." method="_on_damage_zone_body_entered"]

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://l22tvgf5o3er"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_oqlaa"]
+
+[resource]
+script = ExtResource("1_oqlaa")
+item_name = "Призма безумца"
+tier = 3
+item_color = Color(0.66079915, 0.3889167, 0.5700746, 1)
+heal_sanity = -20.0
+add_projectiles = 2
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://duxuksu645fm3"]
+
+[ext_resource type="Script" uid="uid://oyypt3mb75du" path="res://scripts/mechanics/levels/destructible.gd" id="1_aetnt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbsp3"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aetnt"]
+radius = 50.0
+
+[node name="Destructible" type="StaticBody2D" unique_id=1561250726]
+script = ExtResource("1_aetnt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1722057792]
+shape = SubResource("RectangleShape2D_wbsp3")
+debug_color = Color(0, 0.29750687, 0.3523799, 0.41960785)
+
+[node name="InteractionZone" type="Area2D" parent="." unique_id=1861586929]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=137915102]
+shape = SubResource("CircleShape2D_aetnt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1340250314]
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

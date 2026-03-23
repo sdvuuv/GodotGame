@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://yubwo62cmsxy"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_m35lc"]
+
+[resource]
+script = ExtResource("1_m35lc")
+item_name = "Ягоды"
+description = "Восстанавливает 15 хп"
+item_color = Color(0.27058825, 1, 0, 1)
+heal_hp = 15.0
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

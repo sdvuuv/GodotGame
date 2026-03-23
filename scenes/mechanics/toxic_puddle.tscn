@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://x4lhe6bxj70o"]
+
+[ext_resource type="Script" uid="uid://2isiey0fousg" path="res://scripts/enemies/toxic_puddle.gd" id="1_g87cs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qpqce"]
+radius = 30.0
+
+[node name="ToxicPuddle" type="Area2D" unique_id=1524344846]
+script = ExtResource("1_g87cs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=702703772]
+shape = SubResource("CircleShape2D_qpqce")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=855778768]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(1, 1, 0.20392157, 0.43529412)

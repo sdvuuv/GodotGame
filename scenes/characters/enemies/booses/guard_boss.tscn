@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c0hd4o03xreh6"]
+
+[ext_resource type="Script" uid="uid://dc332hf6nwjl7" path="res://scripts/enemies/bosses/guard_boss.gd" id="1_e7i0o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_48tf5"]
+radius = 51.224995
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2as0"]
+size = Vector2(80, 18)
+
+[node name="GuardBoss" type="CharacterBody2D" unique_id=1192301589]
+script = ExtResource("1_e7i0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=88480142]
+shape = SubResource("CircleShape2D_48tf5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=96835095]
+offset_left = -32.0
+offset_top = -64.0
+offset_right = 32.0
+offset_bottom = 64.0
+color = Color(1.92523e-07, 0.3130875, 0.31430206, 1)
+
+[node name="AimPivot" type="Node2D" parent="." unique_id=1829399112]
+
+[node name="Sword" type="Area2D" parent="AimPivot" unique_id=2027125351]
+
+[node name="ColorRect" type="ColorRect" parent="AimPivot/Sword" unique_id=901752081]
+offset_top = -8.0
+offset_right = 80.0
+offset_bottom = 8.0
+color = Color(0.53752935, 0.20735162, 0.18409097, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AimPivot/Sword" unique_id=1678320652]
+position = Vector2(40, 0)
+shape = SubResource("RectangleShape2D_a2as0")

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bbed05m5beihj"]
+
+[ext_resource type="Script" uid="uid://8g7gguh5jby6" path="res://scripts/enemies/ivy.gd" id="1_5jele"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxn32"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7jb55"]
+radius = 14.0
+
+[node name="Ivy" type="CharacterBody2D" unique_id=1023647203 groups=["enemy"]]
+script = ExtResource("1_5jele")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1453553300]
+shape = SubResource("CircleShape2D_rxn32")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1061470656]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
+
+[node name="DamageZone" type="Area2D" parent="." unique_id=1479562377]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=730064697]
+shape = SubResource("CircleShape2D_7jb55")
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=897029268]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="DamageZone" to="." method="_on_damage_zone_body_entered"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

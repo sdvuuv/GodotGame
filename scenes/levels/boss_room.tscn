@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://bplpd3fkirdry"]
+
+[ext_resource type="Script" uid="uid://b6qdeuvw3yjtq" path="res://scripts/mechanics/levels/test_level.gd" id="1_sl7dw"]
+[ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="2_xig87"]
+[ext_resource type="PackedScene" uid="uid://cve0rp7o7jwpd" path="res://scenes/levels/wall.tscn" id="4_lacav"]
+[ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="5_fugaa"]
+
+[node name="TestLevel" type="Node2D" unique_id=1179586345]
+script = ExtResource("1_sl7dw")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1645084880]
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0.5840136, 0.28390393, 0.20799911, 1)
+
+[node name="Player" parent="." unique_id=690924601 instance=ExtResource("2_xig87")]
+position = Vector2(240, 312)
+
+[node name="Wall" parent="." unique_id=282753958 instance=ExtResource("4_lacav")]
+position = Vector2(32, 608)
+
+[node name="Wall34" parent="." unique_id=1527887248 instance=ExtResource("4_lacav")]
+position = Vector2(32, 544)
+
+[node name="Wall35" parent="." unique_id=1241111614 instance=ExtResource("4_lacav")]
+position = Vector2(32, 480)
+
+[node name="Wall36" parent="." unique_id=1663464808 instance=ExtResource("4_lacav")]
+position = Vector2(32, 416)
+
+[node name="Wall37" parent="." unique_id=742766305 instance=ExtResource("4_lacav")]
+position = Vector2(32, 352)
+
+[node name="Wall38" parent="." unique_id=249044213 instance=ExtResource("4_lacav")]
+position = Vector2(32, 288)
+
+[node name="Wall39" parent="." unique_id=52212200 instance=ExtResource("4_lacav")]
+position = Vector2(32, 224)
+
+[node name="Wall40" parent="." unique_id=1479897732 instance=ExtResource("4_lacav")]
+position = Vector2(32, 160)
+
+[node name="Wall41" parent="." unique_id=531601025 instance=ExtResource("4_lacav")]
+position = Vector2(32, 96)
+
+[node name="Wall42" parent="." unique_id=1701682835 instance=ExtResource("4_lacav")]
+position = Vector2(32, 32)
+
+[node name="Wall43" parent="." unique_id=904678925 instance=ExtResource("4_lacav")]
+position = Vector2(96, 32)
+
+[node name="Wall44" parent="." unique_id=1401124117 instance=ExtResource("4_lacav")]
+position = Vector2(160, 32)
+
+[node name="Wall45" parent="." unique_id=1291822498 instance=ExtResource("4_lacav")]
+position = Vector2(224, 32)
+
+[node name="Wall46" parent="." unique_id=1489801345 instance=ExtResource("4_lacav")]
+position = Vector2(288, 32)
+
+[node name="Wall47" parent="." unique_id=673252158 instance=ExtResource("4_lacav")]
+position = Vector2(352, 32)
+
+[node name="Wall48" parent="." unique_id=1604168287 instance=ExtResource("4_lacav")]
+position = Vector2(416, 32)
+
+[node name="Wall49" parent="." unique_id=2053510676 instance=ExtResource("4_lacav")]
+position = Vector2(736, 32)
+
+[node name="Wall50" parent="." unique_id=1231928896 instance=ExtResource("4_lacav")]
+position = Vector2(672, 32)
+
+[node name="Wall51" parent="." unique_id=2113179833 instance=ExtResource("4_lacav")]
+position = Vector2(480, 32)
+
+[node name="Wall51" parent="Wall51" unique_id=813251685 instance=ExtResource("4_lacav")]
+position = Vector2(64, 0)
+
+[node name="Wall52" parent="Wall51" unique_id=1574755417 instance=ExtResource("4_lacav")]
+position = Vector2(128, 0)
+
+[node name="Wall2" parent="." unique_id=2146840032 instance=ExtResource("4_lacav")]
+position = Vector2(96, 608)
+rotation = 1.5707964
+
+[node name="Wall3" parent="." unique_id=1087820051 instance=ExtResource("4_lacav")]
+position = Vector2(160, 608)
+rotation = 1.5707964
+
+[node name="Wall4" parent="." unique_id=1380371876 instance=ExtResource("4_lacav")]
+position = Vector2(224, 608)
+rotation = 1.5707964
+
+[node name="Wall5" parent="." unique_id=60434163 instance=ExtResource("4_lacav")]
+position = Vector2(288, 608)
+rotation = 1.5707964
+
+[node name="Wall6" parent="." unique_id=1527636326 instance=ExtResource("4_lacav")]
+position = Vector2(352, 608)
+rotation = 1.5707964
+
+[node name="Wall7" parent="." unique_id=209883347 instance=ExtResource("4_lacav")]
+position = Vector2(416, 608)
+rotation = 1.5707964
+
+[node name="Wall8" parent="." unique_id=1216280818 instance=ExtResource("4_lacav")]
+position = Vector2(480, 608)
+rotation = 1.5707964
+
+[node name="Wall11" parent="." unique_id=1667079288 instance=ExtResource("4_lacav")]
+position = Vector2(672, 608)
+rotation = 1.5707964
+
+[node name="Wall12" parent="." unique_id=372682609 instance=ExtResource("4_lacav")]
+position = Vector2(736, 608)
+rotation = 1.5707964
+
+[node name="Wall13" parent="." unique_id=1701205781 instance=ExtResource("4_lacav")]
+position = Vector2(800, 608)
+rotation = 1.5707964
+
+[node name="Wall14" parent="." unique_id=42814400 instance=ExtResource("4_lacav")]
+position = Vector2(864, 608)
+rotation = 1.5707964
+
+[node name="Wall15" parent="." unique_id=838196327 instance=ExtResource("4_lacav")]
+position = Vector2(928, 608)
+rotation = 1.5707964
+
+[node name="Wall16" parent="." unique_id=634851415 instance=ExtResource("4_lacav")]
+position = Vector2(992, 608)
+rotation = 1.5707964
+
+[node name="Wall17" parent="." unique_id=1302491813 instance=ExtResource("4_lacav")]
+position = Vector2(1056, 608)
+rotation = 1.5707964
+
+[node name="Wall18" parent="." unique_id=2112624897 instance=ExtResource("4_lacav")]
+position = Vector2(1120, 608)
+rotation = 1.5707964
+
+[node name="Wall19" parent="." unique_id=667588148 instance=ExtResource("4_lacav")]
+position = Vector2(1120, 544)
+rotation = 1.5707964
+
+[node name="Wall20" parent="." unique_id=173079105 instance=ExtResource("4_lacav")]
+position = Vector2(1120, 480)
+rotation = 1.5707964
+
+[node name="Wall21" parent="." unique_id=1112810360 instance=ExtResource("4_lacav")]
+position = Vector2(1120, 416)
+rotation = 1.5707964
+
+[node name="Wall22" parent="." unique_id=1153164287 instance=ExtResource("4_lacav")]
+position = Vector2(1120, 352)
+rotation = 1.5707964
+
+[node name="Wall23" parent="." unique_id=104725435 instance=ExtResource("4_lacav")]
+position = Vector2(1120, 288)
+rotation = 1.5707964
+
+[node name="Wall24" parent="." unique_id=77791141 instance=ExtResource("4_lacav")]
+position = Vector2(1120, 224)
+rotation = 1.5707964
+
+[node name="Wall25" parent="." unique_id=176307736 instance=ExtResource("4_lacav")]
+position = Vector2(1120, 160)
+rotation = 1.5707964
+
+[node name="Wall26" parent="." unique_id=2103502574 instance=ExtResource("4_lacav")]
+position = Vector2(1120, 96)
+rotation = 1.5707964
+
+[node name="Wall27" parent="." unique_id=1834592984 instance=ExtResource("4_lacav")]
+position = Vector2(1120, 32)
+rotation = 1.5707964
+
+[node name="Wall28" parent="." unique_id=1870298255 instance=ExtResource("4_lacav")]
+position = Vector2(1056, 32)
+rotation = 1.5707964
+
+[node name="Wall29" parent="." unique_id=16018214 instance=ExtResource("4_lacav")]
+position = Vector2(992, 32)
+rotation = 1.5707964
+
+[node name="Wall30" parent="." unique_id=1038744928 instance=ExtResource("4_lacav")]
+position = Vector2(928, 32)
+rotation = 1.5707964
+
+[node name="Wall31" parent="." unique_id=1010062150 instance=ExtResource("4_lacav")]
+position = Vector2(864, 32)
+rotation = 1.5707964
+
+[node name="Wall32" parent="." unique_id=1071386892 instance=ExtResource("4_lacav")]
+position = Vector2(800, 32)
+rotation = 1.5707964
+
+[node name="Wall33" parent="." unique_id=1612700730 instance=ExtResource("4_lacav")]
+position = Vector2(800, 32)
+rotation = 1.5707964
+
+[node name="BottomDoor" parent="." unique_id=1157205798 groups=["doors"] instance=ExtResource("5_fugaa")]
+position = Vector2(576, 608)
+direction = Vector2(0, -1)
+
+[node name="SpawnPoint2" type="Marker2D" parent="." unique_id=1008277890 groups=["spawn_points"]]
+position = Vector2(576, 320)
+
+[node name="SpawnPoint3" type="Marker2D" parent="." unique_id=910088801 groups=["spawn_points"]]
+position = Vector2(576, 320)

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b1s8sqshxhr5d"]
+
+[ext_resource type="Script" uid="uid://cdhffi6tibh4k" path="res://scripts/characters/player_script.gd" id="1_pq8s5"]
+[ext_resource type="PackedScene" uid="uid://bj74c34ddpjbk" path="res://scenes/ui/hud.tscn" id="2_gin2a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4dbkn"]
+radius = 16.0
+
+[node name="Player" type="CharacterBody2D" unique_id=690924601 groups=["player"]]
+script = ExtResource("1_pq8s5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=95476326]
+position = Vector2(0, 14)
+shape = SubResource("CircleShape2D_4dbkn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=794230648]
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 16.0
+offset_bottom = 32.0
+
+[node name="AimPivot" type="Node2D" parent="." unique_id=685634092]
+
+[node name="WeaponIndicator" type="ColorRect" parent="AimPivot" unique_id=1554406966]
+offset_left = 16.0
+offset_top = -2.0
+offset_right = 59.0
+offset_bottom = 5.0
+color = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
+
+[node name="MeleeHitbox" type="Area2D" parent="AimPivot" unique_id=802335823]
+
+[node name="ScytheHitbox" type="CollisionPolygon2D" parent="AimPivot/MeleeHitbox" unique_id=1331299886]
+visible = false
+polygon = PackedVector2Array(16, -33, 16, 0.36266327, 16, 32, 79, 33)
+
+[node name="SwordHitbox" type="CollisionPolygon2D" parent="AimPivot/MeleeHitbox" unique_id=365125380]
+visible = false
+position = Vector2(0.060417175, 0)
+scale = Vector2(1.0034722, 1)
+polygon = PackedVector2Array(15, 0, 62, -38, 123, 31, 16, 32)
+disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1581712873]
+position = Vector2(196, 111)
+position_smoothing_enabled = true
+
+[node name="AttackCooldown" type="Timer" parent="." unique_id=21903630]
+one_shot = true
+
+[node name="InvincibilityTimer" type="Timer" parent="." unique_id=354369509]
+wait_time = 0.5
+one_shot = true
+
+[node name="HUD" parent="." unique_id=1573898543 instance=ExtResource("2_gin2a")]
+
+[connection signal="body_entered" from="AimPivot/MeleeHitbox" to="." method="_on_melee_hitbox_body_entered"]
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

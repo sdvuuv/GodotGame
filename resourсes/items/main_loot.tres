@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LootTable" format=3 uid="uid://dnhtqrsev3gvj"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_yyla3"]
+[ext_resource type="Resource" uid="uid://bvc7l4dgo048v" path="res://resourсes/items/flask.tres" id="2_0nxqw"]
+[ext_resource type="Script" uid="uid://bnomqne3elphe" path="res://scripts/mechanics/loot_table.gd" id="2_alqe1"]
+[ext_resource type="Resource" uid="uid://yubwo62cmsxy" path="res://resourсes/items/berries.tres" id="3_k8ojq"]
+[ext_resource type="Resource" uid="uid://b7k7v24fw4xgk" path="res://resourсes/items/talisman.tres" id="4_06473"]
+[ext_resource type="Resource" uid="uid://5e1a3vl5ibu" path="res://resourсes/items/whetstone.tres" id="5_hfnso"]
+[ext_resource type="Resource" uid="uid://l22tvgf5o3er" path="res://resourсes/items/prism.tres" id="6_20y30"]
+
+[resource]
+script = ExtResource("2_alqe1")
+consumables = Array[ExtResource("1_yyla3")]([ExtResource("2_0nxqw"), ExtResource("3_k8ojq"), ExtResource("4_06473")])
+melee_items = Array[ExtResource("1_yyla3")]([ExtResource("5_hfnso")])
+ranged_items = Array[ExtResource("1_yyla3")]([ExtResource("6_20y30")])
+metadata/_custom_type_script = "uid://bnomqne3elphe"

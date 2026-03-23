@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ddp8dnudy4po0"]
+
+[ext_resource type="Script" uid="uid://yc8dm5xffjab" path="res://scripts/mechanics/enemy_projectile.gd" id="1_bvo8t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0jm0h"]
+radius = 5.0
+
+[node name="EnemyProjectile" type="Area2D" unique_id=1873730296]
+script = ExtResource("1_bvo8t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=559970463]
+shape = SubResource("CircleShape2D_0jm0h")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1829851390]
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(1, 0, 0.2509804, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=1575251066]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

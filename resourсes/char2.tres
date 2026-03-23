@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://btf5lrl4evpyt"]
+
+[ext_resource type="Script" uid="uid://crdahgfetqi6p" path="res://scripts/characters/character_data.gd" id="1_1d8yf"]
+
+[resource]
+script = ExtResource("1_1d8yf")
+id = 2
+character_name = "Настюха"
+description = "????"
+attack_damage = 5.0
+attack_cooldown = 0.3
+projectile_speed = 600.0
+projectile_lifespan = 1.5
+pierce_enemies = true
+metadata/_custom_type_script = "uid://crdahgfetqi6p"
