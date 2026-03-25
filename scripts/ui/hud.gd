@@ -1,7 +1,10 @@
 extends CanvasLayer
  
 @onready var health_bar = $Control/ProgressBar
- 
+@onready var minimap = $Control/Minimap
+func _process(_delta: float) -> void:
+	if is_instance_valid(minimap):
+		minimap.queue_redraw() 
 func _ready():
 	if Global.current_character_data != null:
 		health_bar.max_value = Global.current_character_data.max_hp

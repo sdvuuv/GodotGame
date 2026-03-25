@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://da5b2n516pxgk"]
+
+[ext_resource type="Script" uid="uid://c7caqllu3psnp" path="res://scripts/mechanics/levels/first/rooms/garden_room.gd" id="1_x6nk2"]
+[ext_resource type="PackedScene" uid="uid://cidnwutc5i2yd" path="res://scenes/levels/room_boundary.tscn" id="2_x6nk2"]
+[ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_y0u24"]
+[ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_184qk"]
+[ext_resource type="PackedScene" uid="uid://bcgxp0c33rfyg" path="res://scenes/items/pickup.tscn" id="5_x6nk2"]
+[ext_resource type="Resource" uid="uid://yubwo62cmsxy" path="res://resourсes/items/berries.tres" id="6_y0u24"]
+
+[node name="CityGarden" type="Node2D" unique_id=1179586345]
+position = Vector2(-1, 0)
+script = ExtResource("1_x6nk2")
+
+[node name="RoomBoundary" parent="." unique_id=1960775909 instance=ExtResource("2_x6nk2")]
+wall_color = Color(0.1764706, 0.23921569, 0.16470589, 1)
+floor_color = Color(0.101960786, 0.13333334, 0.09411765, 1)
+
+[node name="Player" parent="." unique_id=690924601 instance=ExtResource("3_y0u24")]
+position = Vector2(576, 320)
+
+[node name="BottomDoor" parent="." unique_id=1157205798 groups=["doors"] instance=ExtResource("4_184qk")]
+position = Vector2(577, 624)
+
+[node name="TopDoor" parent="." unique_id=546966646 groups=["doors"] instance=ExtResource("4_184qk")]
+position = Vector2(577, 16)
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=2014285886 groups=["spawn_points"]]
+position = Vector2(300, 280)
+
+[node name="SpawnPoint2" type="Marker2D" parent="." unique_id=1516984373 groups=["spawn_points"]]
+position = Vector2(849, 360)
+
+[node name="RightDoor" parent="." unique_id=537838892 instance=ExtResource("4_184qk")]
+position = Vector2(1137, 320)
+rotation = 1.5707964
+
+[node name="LeftDoor" parent="." unique_id=109289566 instance=ExtResource("4_184qk")]
+position = Vector2(17, 320)
+rotation = 1.5707964
+
+[node name="Bush" type="ColorRect" parent="." unique_id=1843760311]
+offset_left = 46.0
+offset_top = 46.0
+offset_right = 98.0
+offset_bottom = 98.0
+color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+
+[node name="Bush2" type="ColorRect" parent="." unique_id=951281989]
+offset_left = 1054.0
+offset_top = 46.0
+offset_right = 1106.0
+offset_bottom = 98.0
+color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+
+[node name="Bush3" type="ColorRect" parent="." unique_id=538434090]
+offset_left = 46.0
+offset_top = 542.0
+offset_right = 98.0
+offset_bottom = 594.0
+color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+
+[node name="Bush4" type="ColorRect" parent="." unique_id=748199594]
+offset_left = 1049.0
+offset_top = 544.0
+offset_right = 1101.0
+offset_bottom = 596.0
+color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+
+[node name="Pickup" parent="." unique_id=201227829 instance=ExtResource("5_x6nk2")]
+position = Vector2(577, 192)
+item_data = ExtResource("6_y0u24")

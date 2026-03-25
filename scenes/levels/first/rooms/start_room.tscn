@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://yf47ci5yg465"]
+
+[ext_resource type="Script" uid="uid://cq21h1ke7uj2m" path="res://scripts/mechanics/levels/first/rooms/start_room.gd" id="1_pqtkw"]
+[ext_resource type="PackedScene" uid="uid://cidnwutc5i2yd" path="res://scenes/levels/room_boundary.tscn" id="2_hep46"]
+[ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_1121d"]
+[ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_8p0tk"]
+[ext_resource type="Script" uid="uid://cdltgscaf2lvi" path="res://scripts/characters/npcs/some_guy.gd" id="5_712aq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vsnwv"]
+radius = 56.0
+
+[node name="StartLevel" type="Node2D" unique_id=1179586345]
+script = ExtResource("1_pqtkw")
+
+[node name="RoomBoundary" parent="." unique_id=1960775909 instance=ExtResource("2_hep46")]
+
+[node name="Player" parent="." unique_id=690924601 instance=ExtResource("3_1121d")]
+position = Vector2(576, 320)
+
+[node name="BottomDoor" parent="." unique_id=1157205798 groups=["doors"] instance=ExtResource("4_8p0tk")]
+position = Vector2(576, 624)
+
+[node name="TopDoor" parent="." unique_id=546966646 groups=["doors"] instance=ExtResource("4_8p0tk")]
+position = Vector2(576, 16)
+
+[node name="SomeGuy" type="ColorRect" parent="." unique_id=1301406678]
+z_index = 2
+offset_left = 112.0
+offset_top = 72.0
+offset_right = 144.0
+offset_bottom = 144.0
+color = Color(0.6901961, 0.5019608, 0.9411765, 1)
+
+[node name="Area2D" type="Area2D" parent="SomeGuy" unique_id=351335008]
+script = ExtResource("5_712aq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SomeGuy/Area2D" unique_id=234400279]
+position = Vector2(16, 40)
+shape = SubResource("CircleShape2D_vsnwv")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1370800816]
+
+[node name="ControlHints" type="Label" parent="UILayer" unique_id=1280374634]
+offset_left = 96.0
+offset_top = 456.0
+offset_right = 569.0
+offset_bottom = 557.0
+text = "       WASD — движение
+       Стрелки — атака
+       E — взаимодействие
+       Бомба и камень очищения — разрушают препятствия"

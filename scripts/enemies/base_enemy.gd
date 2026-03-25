@@ -12,7 +12,6 @@ var pickup_scene = preload("res://scenes/items/pickup.tscn")
 @onready var color_rect = $ColorRect
 
 func _ready():
-	# Все враги при рождении ищут игрока
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
@@ -37,7 +36,7 @@ func die():
 	if level.has_method("check_enemies"):
 		level.check_enemies()
 		
-	# Дроп предметов (10% шанс)
+
 	if randf() < 0.1: 
 		var random_consumable = Global.loot.get_random_consumable()
 		if random_consumable != null:

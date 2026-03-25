@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://41w02r7v0mpw"]
+
+[ext_resource type="Script" uid="uid://bmnr8o5hmfm5d" path="res://scripts/mechanics/levels/first/rooms/empty_fog_room.gd" id="1_4sady"]
+[ext_resource type="PackedScene" uid="uid://cidnwutc5i2yd" path="res://scenes/levels/room_boundary.tscn" id="2_tmr0o"]
+[ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_7b3xm"]
+[ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_erfkk"]
+[ext_resource type="PackedScene" uid="uid://duxuksu645fm3" path="res://scenes/levels/destructible.tscn" id="5_48r3v"]
+
+[node name="Fog" type="Node2D" unique_id=1179586345]
+position = Vector2(-1, 0)
+script = ExtResource("1_4sady")
+
+[node name="RoomBoundary" parent="." unique_id=1960775909 instance=ExtResource("2_tmr0o")]
+floor_color = Color(0.08627451, 0.078431375, 0.1254902, 1)
+
+[node name="Player" parent="." unique_id=690924601 instance=ExtResource("3_7b3xm")]
+position = Vector2(576, 320)
+
+[node name="BottomDoor" parent="." unique_id=1157205798 groups=["doors"] instance=ExtResource("4_erfkk")]
+position = Vector2(577, 624)
+
+[node name="TopDoor" parent="." unique_id=546966646 groups=["doors"] instance=ExtResource("4_erfkk")]
+position = Vector2(577, 16)
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=2014285886 groups=["spawn_points"]]
+position = Vector2(184, 200)
+
+[node name="SpawnPoint2" type="Marker2D" parent="." unique_id=1516984373 groups=["spawn_points"]]
+position = Vector2(968, 200)
+
+[node name="SpawnPoint3" type="Marker2D" parent="." unique_id=1976748083 groups=["spawn_points"]]
+position = Vector2(184, 440)
+
+[node name="SpawnPoint4" type="Marker2D" parent="." unique_id=1050261970 groups=["spawn_points"]]
+position = Vector2(968, 440)
+
+[node name="RightDoor" parent="." unique_id=537838892 instance=ExtResource("4_erfkk")]
+position = Vector2(1137, 320)
+rotation = 1.5707964
+
+[node name="LeftDoor" parent="." unique_id=109289566 instance=ExtResource("4_erfkk")]
+position = Vector2(17, 320)
+rotation = 1.5707964
+
+[node name="Destructible" parent="." unique_id=1561250726 instance=ExtResource("5_48r3v")]
+position = Vector2(873, 488)
+
+[node name="Destructible2" parent="." unique_id=1991049749 instance=ExtResource("5_48r3v")]
+position = Vector2(129, 136)
+
+[node name="Destructible3" parent="." unique_id=1604808092 instance=ExtResource("5_48r3v")]
+position = Vector2(1025, 528)
+
+[node name="Destructible4" parent="." unique_id=1022257577 instance=ExtResource("5_48r3v")]
+position = Vector2(289, 168)
+
+[node name="FogPatch" type="ColorRect" parent="." unique_id=1694242467]
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 369.0
+offset_bottom = 240.0
+color = Color(0.11807999, 0.1026, 0.18, 0.8117647)
+
+[node name="FogPatch2" type="ColorRect" parent="." unique_id=1517522157]
+offset_left = 785.0
+offset_top = 416.0
+offset_right = 1105.0
+offset_bottom = 592.0
+color = Color(0.11807999, 0.1026, 0.18, 0.8117647)

@@ -1,20 +1,40 @@
 extends Area2D
 
-@export var direction: Vector2 = Vector2.ZERO 
+@export var direction: Vector2 = Vector2.ZERO
 
 var is_open: bool = false
 @onready var color_rect = $ColorRect
+@onready var blocker = $Blocker  # StaticBody2D — стена когда дверь закрыта
 
 func _ready():
-	# По умолчанию дверь заперта (красная)
+	visible = false
+	blocker.visible = false
+	_set_blocker(true)  # коллизия включена по умолчанию
+
+func show_door() -> void:
+	visible = true
+	is_open = false
 	color_rect.color = Color(1, 0, 0)
+	_set_blocker(true)  # дверь закрыта — стена есть
 
-func open_door():
+func lock_door() -> void:
+	is_open = false
+	color_rect.color = Color(1, 0, 0)
+	_set_blocker(true)
+
+func open_door() -> void:
 	is_open = true
-	color_rect.color = Color(0, 1, 0) # Зеленая
+	visible = true
+	color_rect.color = Color(0, 1, 0)
+	_set_blocker(false)  # дверь открыта — стену убираем
 
-func _on_body_entered(body):
+func _set_blocker(enabled: bool) -> void:
+	blocker.visible = enabled
+	# Включаем/выключаем коллизию блокера
+	for child in blocker.get_children():
+		if child is CollisionShape2D:
+			child.disabled = not enabled
+
+func _on_body_entered(body: Node2D) -> void:
 	if is_open and body.is_in_group("player"):
-		FloorManager.change_room(direction)
-		
-		FloorManager.load_current_room_scene()
+		FloorManager.change_room(Vector2i(int(direction.x), int(direction.y)))

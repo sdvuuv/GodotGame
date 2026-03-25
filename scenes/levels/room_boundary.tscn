@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cidnwutc5i2yd"]
+
+[ext_resource type="Script" uid="uid://3hhbgxyieckn" path="res://scripts/mechanics/levels/room_boundary.gd" id="1_vnjg2"]
+
+[node name="RoomBoundary" type="StaticBody2D" unique_id=1960775909]
+script = ExtResource("1_vnjg2")

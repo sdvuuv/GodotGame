@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://pljiawu6x6nt"]
+
+[ext_resource type="Script" uid="uid://clc57mqfr0qwe" path="res://scripts/mechanics/levels/first/rooms/slum_ruins.gd" id="1_3v4cu"]
+[ext_resource type="PackedScene" uid="uid://cidnwutc5i2yd" path="res://scenes/levels/room_boundary.tscn" id="2_da4ij"]
+[ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_76ojr"]
+[ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_vkpnd"]
+[ext_resource type="PackedScene" uid="uid://dwcmn5msegol" path="res://scenes/levels/destructible_box.tscn" id="5_3v4cu"]
+
+[node name="SlumRuins" type="Node2D" unique_id=1179586345]
+position = Vector2(-1, 0)
+script = ExtResource("1_3v4cu")
+
+[node name="RoomBoundary" parent="." unique_id=1960775909 instance=ExtResource("2_da4ij")]
+wall_color = Color(0.1764706, 0.23921569, 0.16470589, 1)
+floor_color = Color(0.08627451, 0.078431375, 0.0627451, 1)
+
+[node name="Player" parent="." unique_id=690924601 instance=ExtResource("3_76ojr")]
+position = Vector2(576, 320)
+
+[node name="BottomDoor" parent="." unique_id=1157205798 groups=["doors"] instance=ExtResource("4_vkpnd")]
+position = Vector2(577, 624)
+
+[node name="TopDoor" parent="." unique_id=546966646 groups=["doors"] instance=ExtResource("4_vkpnd")]
+position = Vector2(577, 16)
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=2014285886 groups=["spawn_points"]]
+position = Vector2(184, 200)
+
+[node name="SpawnPoint2" type="Marker2D" parent="." unique_id=1516984373 groups=["spawn_points"]]
+position = Vector2(968, 200)
+
+[node name="SpawnPoint3" type="Marker2D" parent="." unique_id=1976748083 groups=["spawn_points"]]
+position = Vector2(184, 440)
+
+[node name="SpawnPoint4" type="Marker2D" parent="." unique_id=1050261970 groups=["spawn_points"]]
+position = Vector2(968, 440)
+
+[node name="RightDoor" parent="." unique_id=537838892 instance=ExtResource("4_vkpnd")]
+position = Vector2(1137, 320)
+rotation = 1.5707964
+
+[node name="LeftDoor" parent="." unique_id=109289566 instance=ExtResource("4_vkpnd")]
+position = Vector2(17, 320)
+rotation = 1.5707964
+
+[node name="Destructible3" parent="." unique_id=1561250726 instance=ExtResource("5_3v4cu")]
+position = Vector2(121, 120)
+
+[node name="Destructible" parent="." unique_id=574483302 instance=ExtResource("5_3v4cu")]
+position = Vector2(1049, 544)
+
+[node name="Destructible2" parent="." unique_id=1317905114 instance=ExtResource("5_3v4cu")]
+position = Vector2(281, 144)
+
+[node name="Destructible4" parent="." unique_id=782364591 instance=ExtResource("5_3v4cu")]
+position = Vector2(881, 520)
+
+[node name="Rubble" type="ColorRect" parent="." unique_id=1442088797]
+offset_left = 73.0
+offset_top = 192.0
+offset_right = 90.0
+offset_bottom = 240.0
+color = Color(0.1764706, 0.14117648, 0.09411765, 1)
+
+[node name="Rubble2" type="ColorRect" parent="." unique_id=1236541145]
+offset_left = 1073.0
+offset_top = 400.0
+offset_right = 1090.0
+offset_bottom = 448.0
+color = Color(0.1764706, 0.14117648, 0.09411765, 1)
+
+[node name="Rubble3" type="ColorRect" parent="." unique_id=777726784]
+offset_left = 385.0
+offset_top = 88.0
+offset_right = 402.0
+offset_bottom = 136.0
+color = Color(0.1764706, 0.14117648, 0.09411765, 1)

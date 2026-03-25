@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Ruined"
+run/main_scene="uid://c2p7y7n62q4w2"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

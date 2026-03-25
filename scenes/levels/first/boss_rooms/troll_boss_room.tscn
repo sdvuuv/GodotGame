@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bplpd3fkirdry"]
+
+[ext_resource type="Script" uid="uid://3vxwy8jjog32" path="res://scripts/mechanics/levels/first/boss_rooms/troll_boss_room.gd" id="1_agili"]
+[ext_resource type="PackedScene" uid="uid://cidnwutc5i2yd" path="res://scenes/levels/room_boundary.tscn" id="2_80gso"]
+[ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_2p0qo"]
+[ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_hgqut"]
+
+[node name="TrollBoss" type="Node2D" unique_id=1179586345]
+script = ExtResource("1_agili")
+
+[node name="RoomBoundary" parent="." unique_id=1960775909 instance=ExtResource("2_80gso")]
+
+[node name="Player" parent="." unique_id=690924601 instance=ExtResource("3_2p0qo")]
+position = Vector2(232, 240)
+
+[node name="TopDoor" parent="." unique_id=1157205798 groups=["doors"] instance=ExtResource("4_hgqut")]
+position = Vector2(576, 16)
+
+[node name="SpawnPoint3" type="Marker2D" parent="." unique_id=910088801 groups=["spawn_points"]]
+position = Vector2(576, 320)

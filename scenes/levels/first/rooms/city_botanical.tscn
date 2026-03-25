@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dhoe7luklqhmx"]
+
+[ext_resource type="Script" uid="uid://by5oi47clln00" path="res://scripts/mechanics/levels/first/rooms/botanical_room.gd" id="1_fucwb"]
+[ext_resource type="PackedScene" uid="uid://cidnwutc5i2yd" path="res://scenes/levels/room_boundary.tscn" id="2_nesf7"]
+[ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_nafpx"]
+[ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_52pax"]
+[ext_resource type="PackedScene" uid="uid://dwcmn5msegol" path="res://scenes/levels/destructible_box.tscn" id="5_75pwx"]
+
+[node name="CityBotanical" type="Node2D" unique_id=1179586345]
+position = Vector2(-1, 0)
+script = ExtResource("1_fucwb")
+
+[node name="RoomBoundary" parent="." unique_id=1960775909 instance=ExtResource("2_nesf7")]
+wall_color = Color(0.1764706, 0.23921569, 0.16470589, 1)
+floor_color = Color(0.08235294, 0.11372549, 0.07450981, 1)
+
+[node name="Player" parent="." unique_id=690924601 instance=ExtResource("3_nafpx")]
+position = Vector2(576, 320)
+
+[node name="BottomDoor" parent="." unique_id=1157205798 groups=["doors"] instance=ExtResource("4_52pax")]
+position = Vector2(577, 624)
+
+[node name="TopDoor" parent="." unique_id=546966646 groups=["doors"] instance=ExtResource("4_52pax")]
+position = Vector2(577, 16)
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=2014285886 groups=["spawn_points"]]
+position = Vector2(250, 280)
+
+[node name="SpawnPoint2" type="Marker2D" parent="." unique_id=1516984373 groups=["spawn_points"]]
+position = Vector2(900, 360)
+
+[node name="RightDoor" parent="." unique_id=537838892 instance=ExtResource("4_52pax")]
+position = Vector2(1137, 320)
+rotation = 1.5707964
+
+[node name="LeftDoor" parent="." unique_id=109289566 instance=ExtResource("4_52pax")]
+position = Vector2(17, 320)
+rotation = 1.5707964
+
+[node name="Destructible" parent="." unique_id=1561250726 instance=ExtResource("5_75pwx")]
+position = Vector2(96, 96)
+
+[node name="Destructible2" parent="." unique_id=1373495895 instance=ExtResource("5_75pwx")]
+position = Vector2(1056, 96)
+
+[node name="Destructible3" parent="." unique_id=118252457 instance=ExtResource("5_75pwx")]
+position = Vector2(576, 544)
+
+[node name="bush" type="ColorRect" parent="." unique_id=301480150]
+z_index = 1
+offset_left = 54.0
+offset_top = 54.0
+offset_right = 94.0
+offset_bottom = 94.0
+color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+
+[node name="bush2" type="ColorRect" parent="." unique_id=1927210805]
+z_index = 1
+offset_left = 1058.0
+offset_top = 54.0
+offset_right = 1098.0
+offset_bottom = 94.0
+color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+
+[node name="bush3" type="ColorRect" parent="." unique_id=1336368671]
+z_index = 1
+offset_left = 54.0
+offset_top = 546.0
+offset_right = 94.0
+offset_bottom = 586.0
+color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+
+[node name="bush4" type="ColorRect" parent="." unique_id=1637398229]
+z_index = 1
+offset_left = 1058.0
+offset_top = 546.0
+offset_right = 1098.0
+offset_bottom = 586.0
+color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+
+[node name="bush5" type="ColorRect" parent="." unique_id=603178094]
+z_index = 1
+offset_left = 280.0
+offset_top = 100.0
+offset_right = 308.0
+offset_bottom = 128.0
+color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+
+[node name="bush6" type="ColorRect" parent="." unique_id=174426779]
+z_index = 1
+offset_left = 841.0
+offset_top = 96.0
+offset_right = 869.0
+offset_bottom = 124.0
+color = Color(0.11764706, 0.22745098, 0.09411765, 1)

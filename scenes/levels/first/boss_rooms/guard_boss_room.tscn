@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dulraaqxnc5m0"]
+
+[ext_resource type="Script" uid="uid://dj1ml615rof1" path="res://scripts/mechanics/levels/first/boss_rooms/guard_boss_room.gd" id="1_dv3jk"]
+[ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="2_pxj7h"]
+[ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="3_iqw81"]
+[ext_resource type="PackedScene" uid="uid://cidnwutc5i2yd" path="res://scenes/levels/room_boundary.tscn" id="4_0bg5f"]
+
+[node name="GuardBoss" type="Node2D" unique_id=1179586345]
+script = ExtResource("1_dv3jk")
+
+[node name="RoomBoundary" parent="." unique_id=1960775909 instance=ExtResource("4_0bg5f")]
+
+[node name="Player" parent="." unique_id=690924601 instance=ExtResource("2_pxj7h")]
+position = Vector2(288, 400)
+
+[node name="SpawnPoint2" type="Marker2D" parent="." unique_id=1008277890 groups=["spawn_points"]]
+position = Vector2(576, 320)
+
+[node name="BottomDoor" parent="." unique_id=1157205798 instance=ExtResource("3_iqw81")]
+position = Vector2(576, 624)
