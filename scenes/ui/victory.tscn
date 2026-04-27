@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://blaw7he34ruee"]
+
+[ext_resource type="Script" uid="uid://dvhccksgv0sw2" path="res://scripts/ui/overlay.gd" id="1_am8tn"]
+
+[node name="Victory" type="CanvasLayer" unique_id=62149008]
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=2002424434]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8842943, 0.81990856, 0.74372405, 1)
+script = ExtResource("1_am8tn")
+
+[node name="VictoryLabel" type="Label" parent="." unique_id=68687458]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -12.0
+offset_right = 102.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5658308, 0.29023305, 0.26123118, 1)
+theme_override_font_sizes/font_size = 24
+text = "To be continued..."
+
+[node name="MenuButton" type="Button" parent="." unique_id=130496208]
+custom_minimum_size = Vector2(220, 48)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -240.0
+offset_right = 116.0
+offset_bottom = -192.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0.40306026, 0.33943978, 0.11513134, 1)
+text = "В главное меню"

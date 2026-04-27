@@ -109,9 +109,11 @@ func take_damage(amount: float):
 func die():
 	visible = false
 	await get_tree().create_timer(1.0).timeout
-	Global.reset()
-	get_tree().change_scene_to_file("res://scenes/ui/character_selection.tscn")
+	if not is_instance_valid(self): return
+	var game_over = preload("res://scenes/ui/game_over.tscn").instantiate()
+	get_tree().current_scene.add_child(game_over)
 
+	
 func _on_melee_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage") and not body.is_in_group("player"):
 		body.take_damage(damage)

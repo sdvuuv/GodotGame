@@ -25,3 +25,6 @@ func die():
 	if level.has_method("check_enemies"):
 		level.check_enemies()
 	queue_free()
+	await get_tree().create_timer(1.5).timeout
+	var victory = preload("res://scenes/ui/victory.tscn").instantiate()
+	get_tree().current_scene.add_child(victory)
