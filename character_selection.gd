@@ -28,6 +28,7 @@ func update_carousel():
 func _on_select_button_pressed():
 	Global.selected_character_id = characters[current_index].id
 	Global.load_character_data()
+	Global.reset()
 	FloorManager.generate_first_floor()
 	FloorManager.load_current_room_scene()
 

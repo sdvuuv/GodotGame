@@ -135,7 +135,7 @@ func change_room(direction: Vector2i) -> void:
 		push_warning("FloorManager: нет комнаты по адресу %s" % str(next))
 		return
 	current_room_pos = next
-	visited_rooms[current_room_pos] = true   # отмечаем как посещённую
+	visited_rooms[current_room_pos] = true   #6 отмечаем как посещённую
 	load_current_room_scene()
 
 func load_current_room_scene() -> void:

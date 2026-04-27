@@ -109,6 +109,7 @@ func take_damage(amount: float):
 func die():
 	visible = false
 	await get_tree().create_timer(1.0).timeout
+	Global.reset()
 	get_tree().change_scene_to_file("res://scenes/ui/character_selection.tscn")
 
 func _on_melee_hitbox_body_entered(body: Node2D) -> void:
