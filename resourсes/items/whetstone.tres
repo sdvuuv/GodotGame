@@ -6,6 +6,7 @@
 script = ExtResource("1_ixnfw")
 item_name = "Точильный камень"
 description = "+2 к урону"
+tier = 2
 item_color = Color(0.96946365, 0.9504759, 0.9779009, 1)
 add_damage = 2.0
 metadata/_custom_type_script = "uid://dsvrutroytu1c"

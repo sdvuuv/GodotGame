@@ -6,11 +6,27 @@
 [ext_resource type="Resource" uid="uid://yubwo62cmsxy" path="res://resourсes/items/berries.tres" id="3_k8ojq"]
 [ext_resource type="Resource" uid="uid://b7k7v24fw4xgk" path="res://resourсes/items/talisman.tres" id="4_06473"]
 [ext_resource type="Resource" uid="uid://5e1a3vl5ibu" path="res://resourсes/items/whetstone.tres" id="5_hfnso"]
+[ext_resource type="Resource" uid="uid://c1x5vfoywultx" path="res://resourсes/items/speed_potion.tres" id="5_hyd1a"]
+[ext_resource type="Resource" uid="uid://j870v0d4a8wh" path="res://resourсes/items/hops_flask.tres" id="6_3l53t"]
 [ext_resource type="Resource" uid="uid://l22tvgf5o3er" path="res://resourсes/items/prism.tres" id="6_20y30"]
+[ext_resource type="Resource" uid="uid://c0h16wnr67nfb" path="res://resourсes/items/healstone.tres" id="7_5yth0"]
+[ext_resource type="Resource" uid="uid://c3qt6kihr64t0" path="res://resourсes/items/mind_crystal.tres" id="8_354su"]
+[ext_resource type="Resource" uid="uid://n4faas2os2q4" path="res://resourсes/items/cleanser_bag.tres" id="9_efwvf"]
+[ext_resource type="Resource" uid="uid://bjbit0w8tbrh4" path="res://resourсes/items/bomb_bag.tres" id="10_06mbk"]
+[ext_resource type="Resource" uid="uid://cvjdivwrj38s2" path="res://resourсes/items/iron_glove.tres" id="12_yy8qn"]
+[ext_resource type="Resource" uid="uid://dfg5o4itinghm" path="res://resourсes/items/blood_pact.tres" id="13_ww35g"]
+[ext_resource type="Resource" uid="uid://cdrnsyvjhn3nf" path="res://resourсes/items/bone_charm.tres" id="14_5c181"]
+[ext_resource type="Resource" uid="uid://cschd35pci6db" path="res://resourсes/items/pain_vial.tres" id="15_1odkh"]
+[ext_resource type="Resource" uid="uid://bmgkkiwkmb5n5" path="res://resourсes/items/lucky_stone.tres" id="16_xt2rk"]
+[ext_resource type="Resource" uid="uid://dvig1o76i1mxt" path="res://resourсes/items/mad_prism_2.tres" id="18_s5wnv"]
+[ext_resource type="Resource" uid="uid://cibiucbqpm6u8" path="res://resourсes/items/void_eye.tres" id="19_ndgui"]
+[ext_resource type="Resource" uid="uid://c6pt2wwkis1p8" path="res://resourсes/items/shadow_ring.tres" id="20_sslhj"]
+[ext_resource type="Resource" uid="uid://piq8xy58vbu" path="res://resourсes/items/speed_boots.tres" id="21_a7tkq"]
+[ext_resource type="Resource" uid="uid://d8ex4cbqdg4p" path="res://resourсes/items/scorpion_poison.tres" id="22_53212"]
 
 [resource]
 script = ExtResource("2_alqe1")
-consumables = Array[ExtResource("1_yyla3")]([ExtResource("2_0nxqw"), ExtResource("3_k8ojq"), ExtResource("4_06473")])
-melee_items = Array[ExtResource("1_yyla3")]([ExtResource("5_hfnso")])
-ranged_items = Array[ExtResource("1_yyla3")]([ExtResource("6_20y30")])
+consumables = Array[ExtResource("1_yyla3")]([ExtResource("2_0nxqw"), ExtResource("3_k8ojq"), ExtResource("4_06473"), ExtResource("5_hyd1a"), ExtResource("6_3l53t"), ExtResource("7_5yth0"), ExtResource("8_354su"), ExtResource("9_efwvf"), ExtResource("10_06mbk")])
+melee_items = Array[ExtResource("1_yyla3")]([ExtResource("5_hfnso"), ExtResource("12_yy8qn"), ExtResource("13_ww35g"), ExtResource("14_5c181"), ExtResource("15_1odkh"), ExtResource("16_xt2rk")])
+ranged_items = Array[ExtResource("1_yyla3")]([ExtResource("6_20y30"), ExtResource("18_s5wnv"), ExtResource("19_ndgui"), ExtResource("20_sslhj"), ExtResource("21_a7tkq"), ExtResource("22_53212")])
 metadata/_custom_type_script = "uid://bnomqne3elphe"

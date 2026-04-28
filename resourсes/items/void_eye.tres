@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cibiucbqpm6u8"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_l45ng"]
+
+[resource]
+script = ExtResource("1_l45ng")
+item_name = "Глаз пустоты"
+description = "+4 урона, +1 снаряд, -10 разума"
+tier = 3
+item_color = Color(0.3491902, 0, 0.48452926, 1)
+heal_sanity = -10.0
+add_damage = 4.0
+add_projectiles = 1
+price = 8
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c0h16wnr67nfb"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_rojpo"]
+
+[resource]
+script = ExtResource("1_rojpo")
+item_name = "Камень исцеления"
+description = "+30 HP"
+tier = 2
+item_color = Color(0.95468724, 0.48452926, 0.58383155, 1)
+heal_hp = 30.0
+price = 6
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

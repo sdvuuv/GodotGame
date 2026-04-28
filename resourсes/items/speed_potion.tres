@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c1x5vfoywultx"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_1fgmb"]
+
+[resource]
+script = ExtResource("1_1fgmb")
+item_name = "Ботинки скорости"
+description = "+60 скорости"
+item_color = Color(0.91971517, 0.77594596, 0.80117893, 1)
+add_speed = 60.0
+price = 4
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

@@ -10,6 +10,7 @@ size = Vector2(80, 18)
 
 [node name="GuardBoss" type="CharacterBody2D" unique_id=1192301589]
 script = ExtResource("1_e7i0o")
+fear_tags = Array[String](["elfian", "undead"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=88480142]
 shape = SubResource("CircleShape2D_48tf5")

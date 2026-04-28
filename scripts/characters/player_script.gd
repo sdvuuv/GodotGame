@@ -17,11 +17,12 @@ var projectile_scene = preload("res://scenes/mechanics/projectile.tscn")
 @onready var melee_hitbox = $AimPivot/MeleeHitbox
 @onready var scythe_hitbox = $AimPivot/MeleeHitbox/ScytheHitbox
 @onready var sword_hitbox = $AimPivot/MeleeHitbox/SwordHitbox
-
+var is_berserk: bool = false
 var extra_projectiles: int = 0
 var is_melee_character: bool = false
 var weapon_type: int = 0
 var active_hitbox: CollisionPolygon2D = null
+var sanity_drain_timer: float = 0.0
 
 func _ready():
 	if Global.current_character_data != null:
@@ -42,8 +43,44 @@ func _ready():
 				active_hitbox = scythe_hitbox
 
 		hp = Global.current_hp
+	Global.sanity_changed.connect(_on_sanity_changed)
+func _on_sanity_changed(new_sanity: float):
+	if Global.current_character_data == null: return
+	var max_s = Global.current_character_data.max_sanity
+	var pct = new_sanity / max_s  # от 0.0 до 1.0
 
+	if Global.current_character_data.has_custom_sanity_behavior:
+		_apply_frosa_sanity(pct)
+	else:
+		_apply_default_sanity(pct)
+
+func _apply_frosa_sanity(pct: float):
+	var base_speed  = Global.current_character_data.move_speed  + Global.bonus_speed
+	var base_cd     = Global.current_character_data.attack_cooldown
+
+	if pct > 0.75:
+		speed = base_speed
+		attack_cooldown_timer.wait_time = base_cd
+		is_berserk = false
+	elif pct > 0.5:
+		speed = base_speed * 1.2
+		attack_cooldown_timer.wait_time = base_cd * 0.8
+		is_berserk = false
+	elif pct > 0.25:
+		speed = base_speed * 1.4
+		attack_cooldown_timer.wait_time = base_cd * 0.6
+		is_berserk = false
+	else:
+		speed = base_speed * 1.8
+		attack_cooldown_timer.wait_time = base_cd * 0.3
+		is_berserk = true
+
+func _apply_default_sanity(pct: float):
+	# здесь потом добавим виньетку, глитчи и т.д.
+	# пока просто заглушка
+	pass
 func _physics_process(_delta):
+	
 	if is_dead:
 		return
 
@@ -51,10 +88,18 @@ func _physics_process(_delta):
 	var move_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = move_dir * speed
 	move_and_slide()
+	if is_berserk and move_dir.length() > 0:
+		move_dir = move_dir.rotated(deg_to_rad(randf_range(-90, 90)))
+	velocity = move_dir * speed
+	move_and_slide()
 
 	# 2. ПРИЦЕЛИВАНИЕ И АТАКА
 	var aim_dir = Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down")
 	if aim_dir.length() > 0:
+		var pct = Global.current_sanity / Global.current_character_data.max_sanity
+		if pct < 0.25 and not Global.current_character_data.has_custom_sanity_behavior:
+			if randf() < 0.3:  # 30% шанс на каждую атаку
+				aim_dir = -aim_dir 
 		aim_pivot.rotation = aim_dir.angle()
 		if attack_cooldown_timer.is_stopped():
 			perform_attack(aim_dir.normalized())
@@ -87,6 +132,35 @@ func perform_attack(dir: Vector2):
 			proj.pierce_enemies = Global.current_character_data.pierce_enemies
 			proj.global_position = weapon_indicator.global_position
 			get_tree().current_scene.add_child(proj)
+			
+func _process(delta):
+	if is_dead: return
+	_check_fear_drain(delta)
+
+func _check_fear_drain(delta: float):
+	if Global.current_character_data == null: return
+	if Global.current_character_data.feared_tags.is_empty(): return
+	
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	var feared_nearby = false
+	
+	for enemy in enemies:
+		if not is_instance_valid(enemy): continue
+		var tags = enemy.get("fear_tags")
+		if tags == null: continue
+		for tag in tags:
+			if tag in Global.current_character_data.feared_tags:
+				feared_nearby = true
+				break
+		if feared_nearby: break
+	
+	if feared_nearby:
+		sanity_drain_timer += delta
+		if sanity_drain_timer >= 1.0:
+			sanity_drain_timer = 0.0
+			Global.current_sanity -= Global.current_character_data.sanity_drain_per_second
+	else:
+		sanity_drain_timer = 0.0
 
 func take_damage(amount: float):
 	if is_dead or not invincibility_timer.is_stopped(): return
@@ -121,6 +195,7 @@ func _on_melee_hitbox_body_entered(body: Node2D) -> void:
 func collect_item(item: ItemData):
 	hp = minf(hp + item.heal_hp, Global.current_character_data.max_hp)
 	Global.current_hp = hp
+	Global.current_sanity += item.heal_sanity  
 
 	damage += item.add_damage
 	speed += item.add_speed

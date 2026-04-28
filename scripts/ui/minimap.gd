@@ -11,8 +11,20 @@ const COLOR_BOSS     := Color("#8b3a6b")
 const COLOR_REWARD   := Color("#3d1f4f")
 const COLOR_SHOP     := Color("#3a6b5a")
 const COLOR_START    := Color("#3a6b8a")
-
+var glitch_offset := Vector2.ZERO
+var glitch_intensity: float = 0.0
 func _draw() -> void:
+	if glitch_intensity > 0.0:
+		var max_shift = glitch_intensity * 8.0
+		glitch_offset = Vector2(
+			randf_range(-max_shift, max_shift),
+			randf_range(-max_shift, max_shift)
+		)
+	else:
+		glitch_offset = Vector2.ZERO
+
+	if FloorManager.map_data.is_empty():
+		return
 	if FloorManager.map_data.is_empty():
 		return
 
@@ -30,7 +42,7 @@ func _draw() -> void:
 	var map_height: float = (max_y - min_y + 1) * (ROOM_SIZE.y + ROOM_GAP.y)
 
 	draw_rect(Rect2(
-		MAP_OFFSET - Vector2(4, 4),
+		MAP_OFFSET + glitch_offset - Vector2(4, 4),
 		Vector2(map_width + 8, map_height + 8)
 	), Color(0, 0, 0, 0.6), true)
 
@@ -45,8 +57,8 @@ func _draw() -> void:
 		var is_current: bool = rp == FloorManager.current_room_pos
 		var is_known: bool   = _is_known(rp)
 
-		var draw_x: float = MAP_OFFSET.x + (rp.x - min_x) * (ROOM_SIZE.x + ROOM_GAP.x)
-		var draw_y: float = MAP_OFFSET.y + (max_y - rp.y) * (ROOM_SIZE.y + ROOM_GAP.y)
+		var draw_x: float = MAP_OFFSET.x +  glitch_offset.x + (rp.x - min_x) * (ROOM_SIZE.x + ROOM_GAP.x)
+		var draw_y: float = MAP_OFFSET.y + glitch_offset.y + (max_y - rp.y) * (ROOM_SIZE.y + ROOM_GAP.y)
 		var rect := Rect2(Vector2(draw_x, draw_y), ROOM_SIZE)
 
 		if not is_known:
@@ -81,10 +93,10 @@ func _draw_corridors(room_pos: Vector2i, min_x: int, max_y: int) -> void:
 		if not _is_known(neighbor):
 			continue
 
-		var ax: float = MAP_OFFSET.x + (room_pos.x - min_x) * (ROOM_SIZE.x + ROOM_GAP.x) + ROOM_SIZE.x / 2.0
-		var ay: float = MAP_OFFSET.y + (max_y - room_pos.y) * (ROOM_SIZE.y + ROOM_GAP.y) + ROOM_SIZE.y / 2.0
-		var bx: float = MAP_OFFSET.x + (neighbor.x  - min_x) * (ROOM_SIZE.x + ROOM_GAP.x) + ROOM_SIZE.x / 2.0
-		var by: float = MAP_OFFSET.y + (max_y - neighbor.y)  * (ROOM_SIZE.y + ROOM_GAP.y) + ROOM_SIZE.y / 2.0
+		var ax: float = MAP_OFFSET.x + glitch_offset.x + (room_pos.x - min_x) * (ROOM_SIZE.x + ROOM_GAP.x) + ROOM_SIZE.x / 2.0
+		var ay: float = MAP_OFFSET.y + glitch_offset.y + (max_y - room_pos.y) * (ROOM_SIZE.y + ROOM_GAP.y) + ROOM_SIZE.y / 2.0
+		var bx: float = MAP_OFFSET.x + glitch_offset.x + (neighbor.x  - min_x) * (ROOM_SIZE.x + ROOM_GAP.x) + ROOM_SIZE.x / 2.0
+		var by: float = MAP_OFFSET.y + glitch_offset.y + (max_y - neighbor.y)  * (ROOM_SIZE.y + ROOM_GAP.y) + ROOM_SIZE.y / 2.0
 
 		draw_line(Vector2(ax, ay), Vector2(bx, by), COLOR_BORDER, 1.5)
 

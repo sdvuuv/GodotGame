@@ -13,7 +13,8 @@ class_name ItemData
 @export var add_speed: float = 0.0
 @export var add_projectiles: int = 0 
 
-
+@export_category("Магазин")
+@export var price: int = 0 
 @export_category("Расходники")
 @export var add_bombs: int = 0
 @export var add_cleansers: int = 0

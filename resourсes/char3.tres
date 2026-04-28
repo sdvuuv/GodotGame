@@ -8,6 +8,7 @@ id = 3
 character_name = "Патрик "
 description = "?????"
 placeholder_color = Color(1.1130236e-07, 0.23899665, 2.4065375e-08, 1)
+feared_tags = Array[String](["magic"])
 move_speed = 150.0
 attack_damage = 15.0
 is_melee = true

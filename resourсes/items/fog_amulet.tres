@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://clt2rwwaidq7w"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_fcs51"]
+
+[resource]
+script = ExtResource("1_fcs51")
+item_name = "Амулет тумана"
+description = "+20 разума"
+tier = 3
+item_color = Color(0.77310765, 0.3814855, 0.78661615, 1)
+heal_sanity = 20.0
+price = 4
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

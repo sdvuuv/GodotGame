@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cdrnsyvjhn3nf"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_jneq8"]
+
+[resource]
+script = ExtResource("1_jneq8")
+item_name = "Костяной амулет"
+description = "+10 HP, +3 урона, +10 скорости"
+item_color = Color(0.1581372, 0.47509384, 0.47455728, 1)
+heal_hp = 10.0
+add_damage = 3.0
+add_speed = 10.0
+price = 4
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

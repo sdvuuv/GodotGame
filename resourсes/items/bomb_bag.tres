@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bjbit0w8tbrh4"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_okqf2"]
+
+[resource]
+script = ExtResource("1_okqf2")
+item_name = "Мешочек с зарядами"
+description = "add_bombs = 2"
+tier = 2
+item_color = Color(0.46269476, 0.42940798, 0.10912017, 1)
+price = 3
+add_bombs = 2
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cvjdivwrj38s2"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_thaba"]
+
+[resource]
+script = ExtResource("1_thaba")
+item_name = "Железная перчатка"
+description = "+6 урона, -20 скорости"
+tier = 3
+item_color = Color(0.735357, 0.7977378, 0.7977378, 1)
+add_damage = 6.0
+add_speed = -20.0
+price = 6
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

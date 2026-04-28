@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bmgkkiwkmb5n5"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_s8ddp"]
+
+[resource]
+script = ExtResource("1_s8ddp")
+item_name = "Счастливый камень"
+description = "+3 урона, +10 разума"
+item_color = Color(2.5804994, 2.2165403, 0.95470905, 1)
+heal_sanity = 10.0
+add_damage = 3.0
+price = 5
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

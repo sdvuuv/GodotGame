@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://n4faas2os2q4"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_05l7t"]
+
+[resource]
+script = ExtResource("1_05l7t")
+item_name = "Запасные камни машина"
+description = "add_cleansers = 2"
+tier = 2
+item_color = Color(0.6095475, 0.26085111, 0.5869512, 1)
+price = 3
+add_cleansers = 2
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://j870v0d4a8wh"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_10k57"]
+
+[resource]
+script = ExtResource("1_10k57")
+item_name = "Хмельной сок"
+description = "пивас"
+tier = 2
+item_color = Color(0.9058309, 0.735357, 0.3491902, 1)
+heal_hp = 15.0
+heal_sanity = -15.0
+add_speed = 30.0
+price = 3
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

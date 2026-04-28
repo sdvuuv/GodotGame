@@ -4,11 +4,16 @@ var loot: LootTable = preload("res://resourсes/items/main_loot.tres")
 var selected_character_id: int = 0 
 var current_character_data: CharacterData
 signal hp_changed(new_hp: float)
+signal sanity_changed(new_sanity: float)
 
 var current_hp: float = 100.0 :
 	set(value):
 		current_hp = value
 		hp_changed.emit(current_hp)
+var current_sanity: float = 100.0 :
+	set(value):
+		current_sanity = clampf(value, 0.0, current_character_data.max_sanity if current_character_data else 100.0)
+		sanity_changed.emit(current_sanity)
 var bombs: int = 1 # Взрывные флаконы 
 var cleansers: int = 1 # Камни очищения
 var coins: int = 0
@@ -21,6 +26,7 @@ func load_character_data():
 	current_character_data = load(path)
 	if current_character_data != null:
 		current_hp = current_character_data.max_hp
+		current_sanity = current_character_data.max_sanity  
 
 func reset():
 	if current_character_data == null:

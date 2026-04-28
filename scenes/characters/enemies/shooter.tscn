@@ -10,6 +10,7 @@ radius = 14.0
 
 [node name="shooter" type="CharacterBody2D" unique_id=1023647203 groups=["enemy"]]
 script = ExtResource("1_g3e0r")
+fear_tags = Array[String](["undead", "magic"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1453553300]
 shape = SubResource("CircleShape2D_rxn32")

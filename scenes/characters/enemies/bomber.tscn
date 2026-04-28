@@ -13,6 +13,7 @@ radius = 50.0
 
 [node name="Bomber" type="CharacterBody2D" unique_id=1023647203 groups=["enemy"]]
 script = ExtResource("1_7uync")
+fear_tags = Array[String](["bomb"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1453553300]
 shape = SubResource("CircleShape2D_rxn32")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cschd35pci6db"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_wyww8"]
+
+[resource]
+script = ExtResource("1_wyww8")
+item_name = "Селфхарм машина"
+description = "+20 HP, +5 урона"
+tier = 2
+item_color = Color(0.7977378, 0, 0, 1)
+heal_hp = -20.0
+add_damage = 5.0
+add_speed = 40.0
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

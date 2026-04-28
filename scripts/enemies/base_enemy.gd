@@ -4,11 +4,12 @@ class_name BaseEnemy # Теперь Godot знает, что это за кла�
 @export var hp: float = 20.0
 @export var speed: float = 100.0
 @export var attack_damage: float = 15.0
+@export var fear_tags: Array[String] = []
 
 var is_dead: bool = false  
 var player = null
 var pickup_scene = preload("res://scenes/items/pickup.tscn")
-
+var coin_scene = preload("res://scenes/items/coin.tscn")
 @onready var color_rect = $ColorRect
 
 func _ready():
@@ -31,18 +32,25 @@ func take_damage(amount: float):
 		die()
 
 func die():
-	remove_from_group("enemy") 
+	remove_from_group("enemy")
 	var level = get_tree().current_scene
 	if level.has_method("check_enemies"):
 		level.check_enemies()
-		
 
-	if randf() < 0.1: 
+	if randf() < 0.1:
 		var random_consumable = Global.loot.get_random_consumable()
 		if random_consumable != null:
 			var drop = pickup_scene.instantiate()
 			drop.item_data = random_consumable
-			drop.global_position = global_position 
+			drop.global_position = global_position
 			get_tree().current_scene.call_deferred("add_child", drop)
-			
+
+	# Дроп монет — всегда 1-2 монеты
+	var coin_count = randi_range(1, 2)
+	for i in range(coin_count):
+		var coin = coin_scene.instantiate()
+		var offset = Vector2(randf_range(-20, 20), randf_range(-20, 20))
+		coin.global_position = global_position + offset
+		get_tree().current_scene.call_deferred("add_child", coin)
+
 	queue_free()

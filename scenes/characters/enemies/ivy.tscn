@@ -10,6 +10,7 @@ radius = 14.0
 
 [node name="Ivy" type="CharacterBody2D" unique_id=1023647203 groups=["enemy"]]
 script = ExtResource("1_5jele")
+fear_tags = Array[String](["poison", "magic"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1453553300]
 shape = SubResource("CircleShape2D_rxn32")

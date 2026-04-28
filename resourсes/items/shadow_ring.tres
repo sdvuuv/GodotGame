@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c6pt2wwkis1p8"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_v30su"]
+
+[resource]
+script = ExtResource("1_v30su")
+item_name = "Кольцо тени машина"
+description = "+8 урона"
+tier = 3
+item_color = Color(0.22625968, 0.14847791, 0.113696344, 1)
+add_damage = 8.0
+price = 7
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

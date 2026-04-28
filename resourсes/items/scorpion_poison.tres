@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d8ex4cbqdg4p"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_f243p"]
+
+[resource]
+script = ExtResource("1_f243p")
+item_name = "Яд скорпиона"
+description = "+2 урона"
+tier = 2
+item_color = Color(0.48677072, 0.735357, 0.3491902, 1)
+heal_hp = 9.0
+add_damage = 5.0
+price = 5
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

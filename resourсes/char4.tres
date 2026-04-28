@@ -8,6 +8,7 @@ id = 4
 character_name = "Глеб"
 description = "хлеп"
 placeholder_color = Color(0.64774835, 0.707239, 0.69309527, 1)
+feared_tags = Array[String](["undead"])
 max_hp = 70.0
 move_speed = 125.0
 attack_damage = 17.0

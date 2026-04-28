@@ -9,6 +9,7 @@ size = Vector2(62, 127)
 
 [node name="Guard" type="CharacterBody2D" unique_id=1023647203 groups=["enemy"]]
 script = ExtResource("1_emjg6")
+fear_tags = Array[String](["elfian", "undead"])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1453553300]
 position = Vector2(0, 8)

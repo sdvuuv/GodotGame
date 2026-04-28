@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://piq8xy58vbu"]
+
+[ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_71f51"]
+
+[resource]
+script = ExtResource("1_71f51")
+item_name = "Сапоги скорости "
+description = "Скорость "
+tier = 2
+item_color = Color(0.36890078, 0.38912082, 0.6667942, 1)
+add_speed = 30.0
+price = 3
+metadata/_custom_type_script = "uid://dsvrutroytu1c"

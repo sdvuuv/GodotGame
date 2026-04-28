@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://c5vsc77clxy56" path="res://scripts/ui/hud.gd" id="1_0mwgc"]
 [ext_resource type="Script" uid="uid://dmf31xintghnc" path="res://scripts/ui/minimap.gd" id="2_hqnrr"]
+[ext_resource type="Shader" uid="uid://c2hcvokmi4ts0" path="res://scenes/shaders/vignette.gdshader" id="3_bo48s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh2we"]
-bg_color = Color(0.32744762, 0.5949868, 0.39527842, 1)
+bg_color = Color(0.20616803, 0.5787017, 0.6752357, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8qguk"]
+shader = ExtResource("3_bo48s")
+shader_parameter/intensity = 0.0
+shader_parameter/color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer" unique_id=1573898543]
 script = ExtResource("1_0mwgc")
@@ -26,9 +32,28 @@ offset_bottom = 70.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_wh2we")
 show_percentage = false
 
+[node name="SanityBar" type="ProgressBar" parent="Control" unique_id=1640934662]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 88.0
+offset_right = 240.0
+offset_bottom = 118.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_wh2we")
+show_percentage = false
+
 [node name="Minimap" type="Control" parent="." unique_id=752815636]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_hqnrr")
+
+[node name="Vignette" type="ColorRect" parent="." unique_id=2005265831]
+material = SubResource("ShaderMaterial_8qguk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
