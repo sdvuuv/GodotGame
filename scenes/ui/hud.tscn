@@ -4,8 +4,11 @@
 [ext_resource type="Script" uid="uid://dmf31xintghnc" path="res://scripts/ui/minimap.gd" id="2_hqnrr"]
 [ext_resource type="Shader" uid="uid://c2hcvokmi4ts0" path="res://scenes/shaders/vignette.gdshader" id="3_bo48s"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo48s"]
+bg_color = Color(0.42493206, 0.71805215, 0.5354986, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh2we"]
-bg_color = Color(0.20616803, 0.5787017, 0.6752357, 1)
+bg_color = Color(0.20598418, 0.7313913, 0.6755825, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8qguk"]
 shader = ExtResource("3_bo48s")
@@ -29,7 +32,7 @@ offset_left = 40.0
 offset_top = 40.0
 offset_right = 240.0
 offset_bottom = 70.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_wh2we")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bo48s")
 show_percentage = false
 
 [node name="SanityBar" type="ProgressBar" parent="Control" unique_id=1640934662]
@@ -41,11 +44,22 @@ offset_bottom = 118.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_wh2we")
 show_percentage = false
 
+[node name="CoinsLabel" type="Label" parent="Control" unique_id=709294076]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 144.0
+offset_right = 112.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 18
+text = "🪙 0"
+
 [node name="Minimap" type="Control" parent="." unique_id=752815636]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 56.0
+offset_top = 192.0
+offset_right = 96.0
+offset_bottom = 232.0
 script = ExtResource("2_hqnrr")
 
 [node name="Vignette" type="ColorRect" parent="." unique_id=2005265831]

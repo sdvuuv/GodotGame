@@ -16,7 +16,6 @@ var current_sanity: float = 100.0 :
 		sanity_changed.emit(current_sanity)
 var bombs: int = 1 # Взрывные флаконы 
 var cleansers: int = 1 # Камни очищения
-var coins: int = 0
 var bonus_damage: float = 0.0
 var bonus_speed: float = 0.0
 var extra_projectiles: int = 0
@@ -27,7 +26,12 @@ func load_character_data():
 	if current_character_data != null:
 		current_hp = current_character_data.max_hp
 		current_sanity = current_character_data.max_sanity  
+signal coins_changed(new_coins: int)
 
+var coins: int = 0 :
+	set(value):
+		coins = value
+		coins_changed.emit(coins)
 func reset():
 	if current_character_data == null:
 		return

@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var health_bar = $Control/ProgressBar
 @onready var sanity_bar = $Control/SanityBar
 @onready var minimap = $Control/Minimap
+@onready var coins_label = $Control/CoinsLabel
 @onready var vignette   = $Vignette 
 func _process(_delta: float) -> void:
 	if is_instance_valid(minimap):
@@ -16,12 +17,16 @@ func _ready():
  
 	Global.hp_changed.connect(_on_hp_changed)
 	Global.sanity_changed.connect(_on_sanity_changed)
+	Global.coins_changed.connect(_on_coins_changed)
  
 
 func _on_hp_changed(new_hp: float):
 	health_bar.value = new_hp
+	
+func _on_coins_changed(new_coins: int):  
+	coins_label.text = "🪙 %d" % new_coins
  
-func _on_sanity_changed(new_sanity: float):  # ← новая функция
+func _on_sanity_changed(new_sanity: float):  
 	if Global.current_character_data == null: return
 
 	var pct = new_sanity / Global.current_character_data.max_sanity

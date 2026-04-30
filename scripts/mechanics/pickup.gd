@@ -4,40 +4,37 @@ extends Area2D
 
 @onready var color_rect = $ColorRect
 
-var player_in_range: bool = false
+var price_label: Label = null
+var is_shop_item: bool = false
 
 func _ready():
 	if item_data != null:
 		color_rect.color = item_data.item_color
 
-func _process(_delta):
-	if player_in_range and Input.is_action_just_pressed("interact"):
-		_try_collect()
+		if item_data.price > 0:
+			is_shop_item = true
+			price_label = Label.new()
+			price_label.text = "🪙 %d" % item_data.price
+			price_label.position = Vector2(-16, -28)
+			price_label.add_theme_font_size_override("font_size", 14)
+			add_child(price_label)
+
+	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
-	if body.is_in_group("player") and item_data != null:
-		player_in_range = true
-
-func _on_body_exited(body):
-	if body.is_in_group("player"):
-		player_in_range = false
-
-func _try_collect():
+	if not body.is_in_group("player"): return
 	if item_data == null: return
 
-	if item_data.price > 0:
-		# Платный предмет — проверяем монеты
+	if is_shop_item:
 		if Global.coins >= item_data.price:
 			Global.coins -= item_data.price
-			_collect()
+			body.collect_item(item_data)
+			queue_free()
 		else:
-			print("Недостаточно монет! Нужно: %d, есть: %d" % [item_data.price, Global.coins])
+			color_rect.color = Color(1, 0.2, 0.2)
+			await get_tree().create_timer(0.3).timeout
+			if is_instance_valid(self):
+				color_rect.color = item_data.item_color
 	else:
-		# Бесплатный — подбираем сразу
-		_collect()
-
-func _collect():
-	var players = get_tree().get_nodes_in_group("player")
-	if players.size() > 0:
-		players[0].collect_item(item_data)
-	queue_free()
+		body.collect_item(item_data)
+		queue_free()
