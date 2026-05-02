@@ -9,6 +9,7 @@
 script = ExtResource("1_agili")
 
 [node name="RoomBoundary" parent="." unique_id=1960775909 instance=ExtResource("2_80gso")]
+wall_color = Color(0.66798073, 0.63296217, 0.75177187, 1)
 
 [node name="Player" parent="." unique_id=690924601 instance=ExtResource("3_2p0qo")]
 position = Vector2(232, 240)

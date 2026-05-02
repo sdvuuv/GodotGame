@@ -1,16 +1,24 @@
 [gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://btf5lrl4evpyt"]
 
 [ext_resource type="Script" uid="uid://crdahgfetqi6p" path="res://scripts/characters/character_data.gd" id="1_1d8yf"]
+[ext_resource type="Texture2D" uid="uid://cremk525jvefd" path="res://assets/sprites/lier.png" id="1_ruw5g"]
+[ext_resource type="SpriteFrames" uid="uid://c5vnrxuislx25" path="res://assets/sprites/Lier_sprite_frames.tres" id="3_mvo1g"]
+[ext_resource type="Texture2D" uid="uid://d0opdn6hypd1n" path="res://assets/sprites/bow.png" id="4_6n462"]
 
 [resource]
 script = ExtResource("1_1d8yf")
 id = 2
-character_name = "Настюха"
-description = "????"
+character_name = "Lier"
+description = "the forgotten princess of the kingdom"
 feared_tags = Array[String](["magic"])
 attack_damage = 5.0
 attack_cooldown = 0.3
 projectile_speed = 600.0
 projectile_lifespan = 1.5
 pierce_enemies = true
+portrait = ExtResource("1_ruw5g")
+sprite_frames = ExtResource("3_mvo1g")
+weapon_sprite = ExtResource("4_6n462")
+weapon_scale = Vector2(2, 2)
+weapon_offset = Vector2(20, 0)
 metadata/_custom_type_script = "uid://crdahgfetqi6p"

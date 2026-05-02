@@ -51,6 +51,7 @@ func check_enemies() -> void:
 	if enemies.size() == 0:
 		if not FloorManager.cleared_rooms.has(FloorManager.current_room_pos):
 			FloorManager.cleared_rooms[FloorManager.current_room_pos] = true
+			Global.current_sanity += 15.0
 		_open_all_available_doors()
 	else:
 		_lock_all_doors()

@@ -25,8 +25,6 @@ func _draw() -> void:
 
 	if FloorManager.map_data.is_empty():
 		return
-	if FloorManager.map_data.is_empty():
-		return
 
 	var min_x: int = 999
 	var max_x: int = -999

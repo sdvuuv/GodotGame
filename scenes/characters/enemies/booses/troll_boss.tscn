@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bpk0ajp7eabvw"]
 
 [ext_resource type="Script" uid="uid://buj8ut4pmn46q" path="res://scripts/enemies/bosses/troll_boss.gd" id="1_n8bi1"]
+[ext_resource type="Texture2D" uid="uid://btm1a84u50e28" path="res://assets/sprites/monster_a.png" id="2_vubhs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k0ejk"]
 radius = 40.0
@@ -12,9 +13,8 @@ fear_tags = Array[String](["magic", "stone"])
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1384514106]
 shape = SubResource("CircleShape2D_k0ejk")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1504166736]
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.69135684, 0.6913568, 0.69135684, 1)
+[node name="ColorRect" type="Sprite2D" parent="." unique_id=1477859889]
+texture_filter = 1
+position = Vector2(-5.9999976, 9.999999)
+scale = Vector2(3.8750002, 3.375)
+texture = ExtResource("2_vubhs")

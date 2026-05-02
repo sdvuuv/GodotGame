@@ -50,7 +50,7 @@ const ROOM_SCENES: Dictionary = {
 	RoomType.SLUM_RUINS:        "res://scenes/levels/first/rooms/slum_ruins.tscn",
 	RoomType.SLUM_EMPTY_FOG:    "res://scenes/levels/first/rooms/slum_empty_fog.tscn",
 	RoomType.SLUM_SHOP:         "res://scenes/levels/first/rooms/slum_shop.tscn",
-	RoomType.SLUM_FIRE:         "res://scenes/levels/first/rooms/slum_fire.tscn",
+	RoomType.SLUM_FIRE:         "res://scenes/levels/first/rooms/fire_room.tscn",
 	RoomType.SLUM_PRE_BOSS:     "res://scenes/levels/first/rooms/slum_pre_boss.tscn",
 
 	RoomType.BOSS_GUARD:        "res://scenes/levels/first/boss_rooms/guard_boss_room.tscn",

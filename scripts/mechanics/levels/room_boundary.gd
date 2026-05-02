@@ -12,19 +12,12 @@ extends StaticBody2D
 	set(value):
 		floor_color = value
 		_rebuild()
+		
+@export var wall_texture: Texture2D
+@export var floor_texture: Texture2D
 func _ready() -> void:
 		_rebuild()
 
-func _rebuild() -> void:
-	# Удаляем старые ноды
-	for child in get_children():
-		if child is ColorRect or child is CollisionShape2D:
-			child.queue_free()
-	# Небольшая задержка чтобы queue_free успел отработать
-	if Engine.is_editor_hint():
-		await get_tree().process_frame
-	_build_collision()
-	_build_visuals()
 
 func _build_collision() -> void:
 	var W  := wall_thickness
@@ -64,20 +57,50 @@ func _add_col(pos: Vector2, size: Vector2) -> void:
 	col.position = pos
 	add_child(col)
 
+func _rebuild() -> void:
+	# Удаляем ВСЕ дочерние ноды кроме CollisionShape2D
+	for child in get_children():
+		if not child is CollisionShape2D:
+			child.queue_free()
+	
+	if Engine.is_editor_hint():
+		await get_tree().process_frame
+	
+	_build_collision()
+	_build_visuals()
+
 func _build_visuals() -> void:
 	var W  := wall_thickness
 	var RW := room_width
 	var RH := room_height
 
-	_add_rect(Vector2(0, 0),        Vector2(RW, RH), floor_color)  # пол
-	_add_rect(Vector2(0, 0),        Vector2(RW, W),  wall_color)   # верх
-	_add_rect(Vector2(0, RH - W),   Vector2(RW, W),  wall_color)   # низ
-	_add_rect(Vector2(0, 0),        Vector2(W,  RH), wall_color)   # лево
-	_add_rect(Vector2(RW - W, 0),   Vector2(W,  RH), wall_color)   # право
+	# Пол — весь экран целиком включая углы под стенами
+	_add_rect(Vector2(0, 0), Vector2(RW, RH), floor_color)
+
+	# Стены поверх пола
+	_add_rect(Vector2(0, 0),      Vector2(RW, W), wall_color)  # верх
+	_add_rect(Vector2(0, RH - W), Vector2(RW, W), wall_color)  # низ
+	_add_rect(Vector2(0, W),      Vector2(W, RH - W * 2), wall_color)  # лево (без углов)
+	_add_rect(Vector2(RW - W, W), Vector2(W, RH - W * 2), wall_color)  # право (без углов)
 
 func _add_rect(pos: Vector2, size: Vector2, color: Color) -> void:
-	var cr := ColorRect.new()
-	cr.position = pos
-	cr.size     = size
-	cr.color    = color
-	add_child(cr)
+	var texture: Texture2D = null
+	if color == floor_color:
+		texture = floor_texture
+	elif color == wall_color:
+		texture = wall_texture
+
+	if texture != null:
+		var tr := TextureRect.new()
+		tr.texture = texture
+		tr.position = pos
+		tr.size = size
+		tr.modulate = color
+		tr.stretch_mode = TextureRect.STRETCH_TILE
+		add_child(tr)
+	else:
+		var cr := ColorRect.new()
+		cr.position = pos
+		cr.size = size
+		cr.color = color
+		add_child(cr)

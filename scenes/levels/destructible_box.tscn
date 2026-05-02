@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dwcmn5msegol"]
 
 [ext_resource type="Script" uid="uid://oyypt3mb75du" path="res://scripts/mechanics/levels/destructible.gd" id="1_mx4yw"]
+[ext_resource type="Texture2D" uid="uid://2emjbnoy4mhp" path="res://assets/rooms/box_final.png" id="2_x7t2r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbsp3"]
 size = Vector2(32, 32)
@@ -20,12 +21,11 @@ debug_color = Color(0, 0.29750687, 0.3523799, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=137915102]
 shape = SubResource("CircleShape2D_aetnt")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1340250314]
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
-color = Color(0.5366259, 0.34756514, 0.3299039, 1)
+[node name="ColorRect" type="Sprite2D" parent="." unique_id=650148975]
+texture_filter = 1
+position = Vector2(1, -20)
+scale = Vector2(2.71875, 2.3984375)
+texture = ExtResource("2_x7t2r")
 
 [connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
 [connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

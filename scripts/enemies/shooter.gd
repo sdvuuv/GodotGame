@@ -2,7 +2,7 @@ extends BaseEnemy
 
 var enemy_projectile_scene = preload("res://scenes/mechanics/enemy_projectile.tscn")
 @onready var shoot_timer = $ShootTimer
-
+@onready var anim = $ColorRect
 var wander_direction: Vector2 = Vector2.ZERO
 var wander_timer: float = 0.0
 var wander_interval: float = 2.0 
@@ -47,10 +47,10 @@ func _on_shoot_timer_timeout():
 	shoot_timer.start() 
 
 func shoot_fan():
-	color_rect.color = Color(1, 1, 0)
+	anim.modulate = Color(1, 1, 0)
 	await get_tree().create_timer(0.3).timeout
 	if not is_instance_valid(self): return
-	color_rect.color = Color(0, 1, 0)
+	anim.modulate = Color(0, 1, 0)
 
 	if player == null: return
 

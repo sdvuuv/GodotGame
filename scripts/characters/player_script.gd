@@ -8,16 +8,19 @@ var is_dead: bool = false
 
 var projectile_scene = preload("res://scenes/mechanics/projectile.tscn")
 
-@onready var color_rect = $ColorRect
+@onready var color_rect = $AnimatedSprite2D
 @onready var aim_pivot = $AimPivot
-@onready var weapon_indicator = $AimPivot/WeaponIndicator
 @onready var attack_cooldown_timer = $AttackCooldown
 @onready var invincibility_timer = $InvincibilityTimer
 
 @onready var melee_hitbox = $AimPivot/MeleeHitbox
 @onready var scythe_hitbox = $AimPivot/MeleeHitbox/ScytheHitbox
 @onready var sword_hitbox = $AimPivot/MeleeHitbox/SwordHitbox
+@onready var weapon = $AimPivot/WeaponIndicator
+
+@onready var anim = $AnimatedSprite2D
 var is_berserk: bool = false
+var last_direction_x: float = 1.0
 var extra_projectiles: int = 0
 var is_melee_character: bool = false
 var weapon_type: int = 0
@@ -28,22 +31,23 @@ func _ready():
 	if Global.current_character_data != null:
 		speed = Global.current_character_data.move_speed + Global.bonus_speed
 		damage = Global.current_character_data.attack_damage + Global.bonus_damage
-		color_rect.color = Global.current_character_data.placeholder_color
 		attack_cooldown_timer.wait_time = Global.current_character_data.attack_cooldown
 		extra_projectiles = Global.extra_projectiles
 
 		is_melee_character = Global.current_character_data.is_melee
 		weapon_type = Global.current_character_data.melee_weapon_type
 
-		if is_melee_character:
-			weapon_indicator.visible = false
-			if weapon_type == 1:
-				active_hitbox = sword_hitbox
-			elif weapon_type == 2:
-				active_hitbox = scythe_hitbox
+	if Global.current_character_data != null:
+		weapon.scale = Global.current_character_data.weapon_scale
+		weapon.position = Global.current_character_data.weapon_offset
 
 		hp = Global.current_hp
 	Global.sanity_changed.connect(_on_sanity_changed)
+	if Global.current_character_data != null and Global.current_character_data.sprite_frames != null:
+		anim.sprite_frames = Global.current_character_data.sprite_frames
+		anim.play("idle")
+	if Global.current_character_data != null and Global.current_character_data.weapon_sprite != null:
+		weapon.texture = Global.current_character_data.weapon_sprite
 func _on_sanity_changed(new_sanity: float):
 	if Global.current_character_data == null: return
 	var max_s = Global.current_character_data.max_sanity
@@ -86,8 +90,6 @@ func _physics_process(_delta):
 
 	# 1. ДВИЖЕНИЕ
 	var move_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = move_dir * speed
-	move_and_slide()
 	if is_berserk and move_dir.length() > 0:
 		move_dir = move_dir.rotated(deg_to_rad(randf_range(-90, 90)))
 	velocity = move_dir * speed
@@ -104,6 +106,23 @@ func _physics_process(_delta):
 		if attack_cooldown_timer.is_stopped():
 			perform_attack(aim_dir.normalized())
 			attack_cooldown_timer.start()
+	if velocity.x != 0:
+		last_direction_x = velocity.x
+
+	if velocity.length() > 10:
+		if abs(velocity.x) > abs(velocity.y):
+			# Движение по горизонтали
+			anim.play("run_side")
+			anim.flip_h = velocity.x < 0  # влево = отразить
+		elif velocity.y < 0:
+			anim.play("run_back")
+			anim.flip_h = false
+		else:
+			anim.play("run")
+			anim.flip_h = false
+	else:
+		anim.play("idle")
+		anim.flip_h = last_direction_x < 0  
 
 func perform_attack(dir: Vector2):
 	if is_melee_character:
@@ -130,7 +149,7 @@ func perform_attack(dir: Vector2):
 			proj.speed = Global.current_character_data.projectile_speed
 			proj.lifespan = Global.current_character_data.projectile_lifespan
 			proj.pierce_enemies = Global.current_character_data.pierce_enemies
-			proj.global_position = weapon_indicator.global_position
+			proj.global_position = weapon.global_position
 			get_tree().current_scene.add_child(proj)
 			
 func _process(delta):
@@ -139,28 +158,29 @@ func _process(delta):
 
 func _check_fear_drain(delta: float):
 	if Global.current_character_data == null: return
-	if Global.current_character_data.feared_tags.is_empty(): return
-	
+
 	var enemies = get_tree().get_nodes_in_group("enemy")
-	var feared_nearby = false
-	
-	for enemy in enemies:
-		if not is_instance_valid(enemy): continue
-		var tags = enemy.get("fear_tags")
-		if tags == null: continue
-		for tag in tags:
-			if tag in Global.current_character_data.feared_tags:
-				feared_nearby = true
-				break
-		if feared_nearby: break
-	
-	if feared_nearby:
-		sanity_drain_timer += delta
-		if sanity_drain_timer >= 1.0:
-			sanity_drain_timer = 0.0
-			Global.current_sanity -= Global.current_character_data.sanity_drain_per_second
-	else:
+	if enemies.is_empty():
 		sanity_drain_timer = 0.0
+		return
+
+	var drain_rate = Global.current_character_data.sanity_drain_per_second
+
+	if not Global.current_character_data.feared_tags.is_empty():
+		for enemy in enemies:
+			if not is_instance_valid(enemy): continue
+			var tags = enemy.get("fear_tags")
+			if tags == null: continue
+			for tag in tags:
+				if tag in Global.current_character_data.feared_tags:
+					drain_rate *= 1.5
+					break
+			if drain_rate > Global.current_character_data.sanity_drain_per_second: break
+
+	sanity_drain_timer += delta
+	if sanity_drain_timer >= 1.0:
+		sanity_drain_timer = 0.0
+		Global.current_sanity -= drain_rate
 
 func take_damage(amount: float):
 	if is_dead or not invincibility_timer.is_stopped(): return

@@ -3,7 +3,6 @@ extends BaseRoom
 @onready var control_hints = $UILayer/ControlHints
 @onready var npc_area      = $SomeGuy/Area2D
 @onready var dialog_label  = $UILayer/ControlHints
-@onready var npc_zone = $NPCZone
 func _ready() -> void:
 	super()
 	top_door.open_door()

@@ -18,17 +18,18 @@ func _ready():
 		player = players[0]
 
 func take_damage(amount: float):
-	if is_dead: return  
+	if is_dead: return
 	hp -= amount
-	
+	if hp <= 0:
+		is_dead = true
+
 	if color_rect != null:
 		color_rect.modulate = Color(10, 10, 10)
 		await get_tree().create_timer(0.1).timeout
 		if not is_instance_valid(self): return
 		color_rect.modulate = Color(1, 1, 1)
-	
+
 	if hp <= 0:
-		is_dead = true
 		die()
 
 func die():
@@ -45,12 +46,9 @@ func die():
 			drop.global_position = global_position
 			get_tree().current_scene.call_deferred("add_child", drop)
 
-	# Дроп монет — всегда 1-2 монеты
-	var coin_count = randi_range(1, 2)
-	for i in range(coin_count):
+	if randf() < 0.4:
 		var coin = coin_scene.instantiate()
-		var offset = Vector2(randf_range(-20, 20), randf_range(-20, 20))
-		coin.global_position = global_position + offset
+		coin.global_position = global_position + Vector2(randf_range(-20, 20), randf_range(-20, 20))
 		get_tree().current_scene.call_deferred("add_child", coin)
 
 	queue_free()

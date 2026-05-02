@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cmbu36lapaf1w"]
 
 [ext_resource type="Script" uid="uid://c53sdnqttfi2b" path="res://scripts/enemies/bomber.gd" id="1_7uync"]
+[ext_resource type="SpriteFrames" uid="uid://c87tepsdmbfro" path="res://assets/sprites/bomb.tres" id="2_0scq7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rxn32"]
 radius = 12.0
@@ -18,11 +19,12 @@ fear_tags = Array[String](["bomb"])
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1453553300]
 shape = SubResource("CircleShape2D_rxn32")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1061470656]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="ColorRect" type="AnimatedSprite2D" parent="." unique_id=48883512]
+texture_filter = 1
+position = Vector2(-2, -2)
+scale = Vector2(2.90625, 2.75)
+sprite_frames = ExtResource("2_0scq7")
+animation = &"idle"
 metadata/_edit_use_anchors_ = true
 
 [node name="DamageZone" type="Area2D" parent="." unique_id=1479562377]

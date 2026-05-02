@@ -1,15 +1,23 @@
 [gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://1k20eok60h08"]
 
 [ext_resource type="Script" uid="uid://crdahgfetqi6p" path="res://scripts/characters/character_data.gd" id="1_m7afq"]
+[ext_resource type="Texture2D" uid="uid://b2avw7ggog4dt" path="res://assets/sprites/Irmin.png" id="1_tafhl"]
+[ext_resource type="SpriteFrames" uid="uid://cke82yp1labum" path="res://assets/sprites/3_sprite_frames.tres" id="3_5m010"]
+[ext_resource type="Texture2D" uid="uid://wu610t1gsedp" path="res://assets/sprites/claymore.png" id="4_14xjo"]
 
 [resource]
 script = ExtResource("1_m7afq")
 id = 3
-character_name = "Патрик "
-description = "?????"
+character_name = "Irimin "
+description = "a knight disfigured by magic"
 placeholder_color = Color(1.1130236e-07, 0.23899665, 2.4065375e-08, 1)
 feared_tags = Array[String](["magic"])
 move_speed = 150.0
 attack_damage = 15.0
 is_melee = true
+portrait = ExtResource("1_tafhl")
+sprite_frames = ExtResource("3_5m010")
+weapon_sprite = ExtResource("4_14xjo")
+weapon_scale = Vector2(4, 4)
+weapon_offset = Vector2(80, 0)
 metadata/_custom_type_script = "uid://crdahgfetqi6p"

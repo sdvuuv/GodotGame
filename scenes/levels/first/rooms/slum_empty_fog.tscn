@@ -5,6 +5,22 @@
 [ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_i47m2"]
 [ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_sliwe"]
 [ext_resource type="PackedScene" uid="uid://duxuksu645fm3" path="res://scenes/levels/destructible.tscn" id="5_5553v"]
+[ext_resource type="Shader" uid="uid://krxlqrac2mwu" path="res://scenes/levels/first/rooms/city_empty_fog.gdshader" id="6_o246h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i47m2"]
+shader = ExtResource("6_o246h")
+shader_parameter/speed = 0.5
+shader_parameter/density = 0.6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sliwe"]
+shader = ExtResource("6_o246h")
+shader_parameter/speed = 0.5
+shader_parameter/density = 0.6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5553v"]
+shader = ExtResource("6_o246h")
+shader_parameter/speed = 0.5
+shader_parameter/density = 0.6
 
 [node name="FoggedSlum" type="Node2D" unique_id=1179586345]
 position = Vector2(-1, 0)
@@ -60,6 +76,7 @@ position = Vector2(881, 112)
 position = Vector2(1009, 528)
 
 [node name="FogPatch" type="ColorRect" parent="." unique_id=208452031]
+material = SubResource("ShaderMaterial_i47m2")
 offset_left = 41.0
 offset_top = 456.0
 offset_right = 369.0
@@ -67,6 +84,7 @@ offset_bottom = 624.0
 color = Color(0.1026, 0.18, 0.1026, 0.6862745)
 
 [node name="FogPatch2" type="ColorRect" parent="." unique_id=1158891195]
+material = SubResource("ShaderMaterial_sliwe")
 offset_left = 777.0
 offset_top = 440.0
 offset_right = 1105.0
@@ -74,6 +92,7 @@ offset_bottom = 608.0
 color = Color(0.1026, 0.18, 0.1026, 0.6862745)
 
 [node name="FogPatch3" type="ColorRect" parent="." unique_id=1090758838]
+material = SubResource("ShaderMaterial_5553v")
 offset_left = 761.0
 offset_top = 40.0
 offset_right = 1089.0

@@ -18,5 +18,3 @@ offset_bottom = 8.0
 shape = SubResource("RectangleShape2D_v3g1g")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

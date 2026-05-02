@@ -5,17 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_nafpx"]
 [ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_52pax"]
 [ext_resource type="PackedScene" uid="uid://dwcmn5msegol" path="res://scenes/levels/destructible_box.tscn" id="5_75pwx"]
+[ext_resource type="Texture2D" uid="uid://med7ob2uquxi" path="res://assets/rooms/bush2.png" id="6_75pwx"]
+[ext_resource type="Texture2D" uid="uid://rtjl8gaxo4rd" path="res://assets/rooms/tree1.png" id="7_pkggv"]
+[ext_resource type="Texture2D" uid="uid://desvdmjs4sgni" path="res://assets/rooms/bush1.png" id="8_mjmrl"]
+[ext_resource type="Texture2D" uid="uid://bl02ww6f2x0uc" path="res://assets/rooms/tree2.png" id="9_svpv5"]
 
 [node name="CityBotanical" type="Node2D" unique_id=1179586345]
 position = Vector2(-1, 0)
 script = ExtResource("1_fucwb")
 
 [node name="RoomBoundary" parent="." unique_id=1960775909 instance=ExtResource("2_nesf7")]
-wall_color = Color(0.1764706, 0.23921569, 0.16470589, 1)
-floor_color = Color(0.08235294, 0.11372549, 0.07450981, 1)
+wall_color = Color(0.69382495, 0.80451864, 0.6726729, 1)
+floor_color = Color(0.4516917, 0.55092233, 0.42690215, 1)
 
 [node name="Player" parent="." unique_id=690924601 instance=ExtResource("3_nafpx")]
-position = Vector2(576, 320)
+position = Vector2(577, 320)
 
 [node name="BottomDoor" parent="." unique_id=1157205798 groups=["doors"] instance=ExtResource("4_52pax")]
 position = Vector2(577, 624)
@@ -44,52 +48,45 @@ position = Vector2(96, 96)
 position = Vector2(1056, 96)
 
 [node name="Destructible3" parent="." unique_id=118252457 instance=ExtResource("5_75pwx")]
-position = Vector2(576, 544)
+position = Vector2(201, 496)
 
-[node name="bush" type="ColorRect" parent="." unique_id=301480150]
+[node name="bush" type="Sprite2D" parent="." unique_id=1269700624]
 z_index = 1
-offset_left = 54.0
-offset_top = 54.0
-offset_right = 94.0
-offset_bottom = 94.0
-color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+texture_filter = 1
+position = Vector2(81.00001, 160)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_75pwx")
 
-[node name="bush2" type="ColorRect" parent="." unique_id=1927210805]
+[node name="bush2" type="Sprite2D" parent="." unique_id=237929885]
 z_index = 1
-offset_left = 1058.0
-offset_top = 54.0
-offset_right = 1098.0
-offset_bottom = 94.0
-color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+texture_filter = 1
+position = Vector2(249, 432.00003)
+scale = Vector2(1.75, 1.7)
+texture = ExtResource("7_pkggv")
 
-[node name="bush3" type="ColorRect" parent="." unique_id=1336368671]
+[node name="bush3" type="Sprite2D" parent="." unique_id=1684250791]
 z_index = 1
-offset_left = 54.0
-offset_top = 546.0
-offset_right = 94.0
-offset_bottom = 586.0
-color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+texture_filter = 1
+position = Vector2(145, 536)
+scale = Vector2(3, 3.75)
+texture = ExtResource("8_mjmrl")
 
-[node name="bush4" type="ColorRect" parent="." unique_id=1637398229]
+[node name="bush4" type="Sprite2D" parent="." unique_id=1134060267]
 z_index = 1
-offset_left = 1058.0
-offset_top = 546.0
-offset_right = 1098.0
-offset_bottom = 586.0
-color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+texture_filter = 1
+position = Vector2(1025, 144)
+scale = Vector2(2.25, 2)
+texture = ExtResource("6_75pwx")
 
-[node name="bush5" type="ColorRect" parent="." unique_id=603178094]
+[node name="bush5" type="Sprite2D" parent="." unique_id=393911846]
 z_index = 1
-offset_left = 280.0
-offset_top = 100.0
-offset_right = 308.0
-offset_bottom = 128.0
-color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+texture_filter = 1
+position = Vector2(857, 128)
+scale = Vector2(1.8333334, 2)
+texture = ExtResource("9_svpv5")
 
-[node name="bush6" type="ColorRect" parent="." unique_id=174426779]
+[node name="bush6" type="Sprite2D" parent="." unique_id=1277479296]
 z_index = 1
-offset_left = 841.0
-offset_top = 96.0
-offset_right = 869.0
-offset_bottom = 124.0
-color = Color(0.11764706, 0.22745098, 0.09411765, 1)
+position = Vector2(125, 172)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("6_75pwx")

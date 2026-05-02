@@ -19,3 +19,8 @@ class_name CharacterData
 # 0 - Нет (Ренжевик), 1 - Меч, 2 - Коса
 @export var melee_weapon_type: int = 0
 @export var has_custom_sanity_behavior: bool = false
+@export var portrait: Texture2D
+@export var sprite_frames: SpriteFrames
+@export var weapon_sprite: Texture2D
+@export var weapon_scale: Vector2 = Vector2(1, 1)
+@export var weapon_offset: Vector2 = Vector2(0, 0)

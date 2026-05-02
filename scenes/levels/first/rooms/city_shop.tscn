@@ -4,17 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://cidnwutc5i2yd" path="res://scenes/levels/room_boundary.tscn" id="2_scpnp"]
 [ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_2ydq8"]
 [ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_nrlbj"]
-[ext_resource type="PackedScene" uid="uid://bcgxp0c33rfyg" path="res://scenes/items/pickup.tscn" id="5_scpnp"]
-[ext_resource type="Resource" uid="uid://b7k7v24fw4xgk" path="res://resourсes/items/talisman.tres" id="6_nrlbj"]
-[ext_resource type="Resource" uid="uid://yubwo62cmsxy" path="res://resourсes/items/berries.tres" id="7_ypmtr"]
-[ext_resource type="Resource" uid="uid://5e1a3vl5ibu" path="res://resourсes/items/whetstone.tres" id="8_i4a7p"]
 
 [node name="CityShop" type="Node2D" unique_id=1179586345]
 position = Vector2(-1, 0)
 script = ExtResource("1_17rli")
 
 [node name="RoomBoundary" parent="." unique_id=1960775909 instance=ExtResource("2_scpnp")]
-floor_color = Color(0.08627451, 0.078431375, 0.11764706, 1)
+wall_color = Color(0.85606784, 0.84317607, 0.8978668, 1)
+floor_color = Color(0.8025523, 0.7902306, 0.8625782, 1)
 
 [node name="Player" parent="." unique_id=690924601 instance=ExtResource("3_2ydq8")]
 position = Vector2(576, 320)
@@ -40,15 +37,3 @@ offset_top = 260.0
 offset_right = 726.0
 offset_bottom = 280.0
 color = Color(0.20784314, 0.15686275, 0.09411765, 1)
-
-[node name="Pickup" parent="." unique_id=201227829 instance=ExtResource("5_scpnp")]
-position = Vector2(466, 236)
-item_data = ExtResource("6_nrlbj")
-
-[node name="Pickup2" parent="." unique_id=1149646924 instance=ExtResource("5_scpnp")]
-position = Vector2(577, 236)
-item_data = ExtResource("7_ypmtr")
-
-[node name="Pickup3" parent="." unique_id=936524145 instance=ExtResource("5_scpnp")]
-position = Vector2(666, 236)
-item_data = ExtResource("8_i4a7p")

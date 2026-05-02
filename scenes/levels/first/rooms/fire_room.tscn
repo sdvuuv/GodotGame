@@ -5,6 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_11vch"]
 [ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_47pkf"]
 [ext_resource type="PackedScene" uid="uid://dwcmn5msegol" path="res://scenes/levels/destructible_box.tscn" id="5_6moo0"]
+[ext_resource type="Shader" uid="uid://com5kplaqcc3" path="res://scenes/levels/first/rooms/fire_room.gdshader" id="6_x7nre"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_11vch"]
+shader = ExtResource("6_x7nre")
+shader_parameter/speed = 1.2
+shader_parameter/intensity = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x7nre"]
+shader = ExtResource("6_x7nre")
+shader_parameter/speed = 1.2
+shader_parameter/intensity = 0.8
 
 [node name="FireRoom" type="Node2D" unique_id=1179586345]
 position = Vector2(-1, 0)
@@ -50,15 +61,17 @@ position = Vector2(137, 120)
 position = Vector2(1001, 112)
 
 [node name="Scorch" type="ColorRect" parent="." unique_id=27555614]
-offset_left = 81.0
-offset_top = 320.0
-offset_right = 442.0
-offset_bottom = 568.0
+material = SubResource("ShaderMaterial_11vch")
+offset_left = 73.0
+offset_top = 336.0
+offset_right = 434.0
+offset_bottom = 584.0
 color = Color(0.16, 0.06064, 0.030399999, 0.80784315)
 
 [node name="Scorch2" type="ColorRect" parent="." unique_id=1896722206]
-offset_left = 713.0
-offset_top = 88.0
-offset_right = 1074.0
-offset_bottom = 336.0
+material = SubResource("ShaderMaterial_x7nre")
+offset_left = 745.0
+offset_top = 64.0
+offset_right = 1106.0
+offset_bottom = 312.0
 color = Color(0.16, 0.06064, 0.030399999, 0.80784315)

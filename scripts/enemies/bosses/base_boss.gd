@@ -6,15 +6,15 @@ func _ready():
  
 func take_damage(amount: float):
 	if is_dead: return
- 
 	hp -= amount
- 
-	if color_rect != null:
-		color_rect.modulate = Color(10, 10, 10)
+
+	var anim = get_node_or_null("ColorRect")
+	if anim != null:
+		anim.modulate = Color(10, 10, 10)
 		await get_tree().create_timer(0.1).timeout
 		if not is_instance_valid(self): return
-		color_rect.modulate = Color(1, 1, 1)
- 
+		anim.modulate = Color(1, 1, 1)
+
 	if hp <= 0:
 		is_dead = true
 		die()
@@ -24,7 +24,8 @@ func die():
 	var level = get_tree().current_scene
 	if level.has_method("check_enemies"):
 		level.check_enemies()
-	queue_free()
-	await get_tree().create_timer(1.5).timeout
+	var tree = get_tree()
+	await tree.create_timer(1.5).timeout
 	var victory = preload("res://scenes/ui/victory.tscn").instantiate()
-	get_tree().current_scene.add_child(victory)
+	tree.current_scene.add_child(victory)
+	queue_free()

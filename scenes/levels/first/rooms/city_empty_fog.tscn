@@ -5,13 +5,25 @@
 [ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_7b3xm"]
 [ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_erfkk"]
 [ext_resource type="PackedScene" uid="uid://duxuksu645fm3" path="res://scenes/levels/destructible.tscn" id="5_48r3v"]
+[ext_resource type="Shader" uid="uid://krxlqrac2mwu" path="res://scenes/levels/first/rooms/city_empty_fog.gdshader" id="6_npcqt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pwaqp"]
+shader = ExtResource("6_npcqt")
+shader_parameter/speed = 0.5
+shader_parameter/density = 0.6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_npcqt"]
+shader = ExtResource("6_npcqt")
+shader_parameter/speed = 0.5
+shader_parameter/density = 0.6
 
 [node name="Fog" type="Node2D" unique_id=1179586345]
 position = Vector2(-1, 0)
 script = ExtResource("1_4sady")
 
 [node name="RoomBoundary" parent="." unique_id=1960775909 instance=ExtResource("2_tmr0o")]
-floor_color = Color(0.08627451, 0.078431375, 0.1254902, 1)
+wall_color = Color(0.7814866, 0.7622131, 0.8422075, 1)
+floor_color = Color(0.7310007, 0.6984171, 0.79289085, 1)
 
 [node name="Player" parent="." unique_id=690924601 instance=ExtResource("3_7b3xm")]
 position = Vector2(576, 320)
@@ -55,6 +67,7 @@ position = Vector2(1025, 528)
 position = Vector2(289, 168)
 
 [node name="FogPatch" type="ColorRect" parent="." unique_id=1694242467]
+material = SubResource("ShaderMaterial_pwaqp")
 offset_left = 49.0
 offset_top = 64.0
 offset_right = 369.0
@@ -62,6 +75,7 @@ offset_bottom = 240.0
 color = Color(0.11807999, 0.1026, 0.18, 0.8117647)
 
 [node name="FogPatch2" type="ColorRect" parent="." unique_id=1517522157]
+material = SubResource("ShaderMaterial_npcqt")
 offset_left = 785.0
 offset_top = 416.0
 offset_right = 1105.0

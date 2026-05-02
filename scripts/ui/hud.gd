@@ -14,10 +14,14 @@ func _ready():
 		health_bar.value = Global.current_hp
 		sanity_bar.max_value = Global.current_character_data.max_sanity
 		sanity_bar.value = Global.current_sanity
- 
+
+	coins_label.text = "🪙 %d" % Global.coins
+
 	Global.hp_changed.connect(_on_hp_changed)
 	Global.sanity_changed.connect(_on_sanity_changed)
 	Global.coins_changed.connect(_on_coins_changed)
+
+	_on_sanity_changed(Global.current_sanity)
  
 
 func _on_hp_changed(new_hp: float):

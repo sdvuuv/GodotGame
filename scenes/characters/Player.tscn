@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b1s8sqshxhr5d"]
 
 [ext_resource type="Script" uid="uid://cdhffi6tibh4k" path="res://scripts/characters/player_script.gd" id="1_pq8s5"]
+[ext_resource type="SpriteFrames" uid="uid://cptu20jrnh4fo" path="res://assets/sprites/4_sprite_frames.tres" id="2_7n8ao"]
 [ext_resource type="PackedScene" uid="uid://bj74c34ddpjbk" path="res://scenes/ui/hud.tscn" id="2_gin2a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4dbkn"]
@@ -13,20 +14,17 @@ script = ExtResource("1_pq8s5")
 position = Vector2(0, 14)
 shape = SubResource("CircleShape2D_4dbkn")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=794230648]
-offset_left = -16.0
-offset_top = -32.0
-offset_right = 16.0
-offset_bottom = 32.0
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1431283223]
+texture_filter = 1
+position = Vector2(-5, -3)
+scale = Vector2(4.3891125, 3.8850808)
+sprite_frames = ExtResource("2_7n8ao")
+animation = &"death"
 
 [node name="AimPivot" type="Node2D" parent="." unique_id=685634092]
 
-[node name="WeaponIndicator" type="ColorRect" parent="AimPivot" unique_id=1554406966]
-offset_left = 16.0
-offset_top = -2.0
-offset_right = 59.0
-offset_bottom = 5.0
-color = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
+[node name="WeaponIndicator" type="Sprite2D" parent="AimPivot" unique_id=1579349271]
+texture_filter = 1
 
 [node name="MeleeHitbox" type="Area2D" parent="AimPivot" unique_id=802335823]
 

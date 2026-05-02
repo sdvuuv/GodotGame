@@ -14,19 +14,20 @@ func _ready():
 func show_door() -> void:
 	visible = true
 	is_open = false
-	color_rect.color = Color(1, 0, 0)
-	_set_blocker(true)  # дверь закрыта — стена есть
+	color_rect.modulate = Color(1, 0.3, 0.3)  # красноватый — закрыта
+	_set_blocker(true)
 
 func lock_door() -> void:
 	is_open = false
-	color_rect.color = Color(1, 0, 0)
+	color_rect.modulate = Color(1, 0.3, 0.3)
 	_set_blocker(true)
+
 
 func open_door() -> void:
 	is_open = true
 	visible = true
-	color_rect.color = Color(0, 1, 0)
-	_set_blocker(false)  # дверь открыта — стену убираем
+	color_rect.modulate = Color(1, 1, 1)  # нормальный цвет — открыта
+	_set_blocker(false)
 
 func _set_blocker(enabled: bool) -> void:
 	blocker.visible = enabled

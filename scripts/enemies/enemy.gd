@@ -12,7 +12,6 @@ func _physics_process(delta):
 		move_and_slide()
 		
 		# Кусает постоянно вблизи
-		var overlapping_bodies = damage_zone.get_overlapping_bodies()
 		attack_cooldown -= delta
 		if attack_cooldown <= 0.0:
 			for body in damage_zone.get_overlapping_bodies():

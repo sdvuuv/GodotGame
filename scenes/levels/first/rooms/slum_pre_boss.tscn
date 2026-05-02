@@ -43,27 +43,11 @@ rotation = 1.5707964
 position = Vector2(17, 320)
 rotation = 1.5707964
 
-[node name="Patch" type="ColorRect" parent="." unique_id=1004223369]
-z_index = 1
-offset_left = 97.0
-offset_top = 88.0
-offset_right = 265.0
-offset_bottom = 192.0
-color = Color(0.014559999, 0.02, 0.0136, 0.74509805)
-
-[node name="Patch2" type="ColorRect" parent="." unique_id=1345724423]
-z_index = 1
-offset_left = 905.0
-offset_top = 448.0
-offset_right = 1073.0
-offset_bottom = 552.0
-color = Color(0.014559999, 0.02, 0.0136, 0.74509805)
-
 [node name="Destructible" parent="." unique_id=1561250726 instance=ExtResource("5_3en3f")]
 position = Vector2(393, 320)
 
 [node name="Destructible2" parent="." unique_id=2013255950 instance=ExtResource("5_3en3f")]
-position = Vector2(905, 136)
+position = Vector2(897, 144)
 
 [node name="Destructible3" parent="." unique_id=61348233 instance=ExtResource("5_3en3f")]
 position = Vector2(313, 488)

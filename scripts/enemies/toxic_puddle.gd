@@ -7,12 +7,12 @@ var bodies_inside: Array = []     # кто щас в луже
 var tick_timer: float = 0.0
 
 func _ready():
-	$ColorRect.color = Color(0, 0.8, 0, 0.4)
+	$ColorRect.modulate = Color(0, 0.8, 0, 0.4)
 	
 	await get_tree().create_timer(0.5).timeout
 	if not is_instance_valid(self): return
 	
-	$ColorRect.color = Color(0, 1, 0, 0.8)
+	$ColorRect.modulate = Color(0, 1, 0, 0.8)
 	
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)

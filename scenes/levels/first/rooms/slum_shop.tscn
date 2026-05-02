@@ -4,10 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://cidnwutc5i2yd" path="res://scenes/levels/room_boundary.tscn" id="2_0i6cv"]
 [ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_51pn4"]
 [ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_go75r"]
-[ext_resource type="PackedScene" uid="uid://bcgxp0c33rfyg" path="res://scenes/items/pickup.tscn" id="5_gkjmk"]
-[ext_resource type="Resource" uid="uid://b7k7v24fw4xgk" path="res://resourсes/items/talisman.tres" id="6_a0yqt"]
-[ext_resource type="Resource" uid="uid://yubwo62cmsxy" path="res://resourсes/items/berries.tres" id="7_e5teb"]
-[ext_resource type="Resource" uid="uid://5e1a3vl5ibu" path="res://resourсes/items/whetstone.tres" id="8_o5spt"]
 
 [node name="SlumShop" type="Node2D" unique_id=1179586345]
 position = Vector2(-1, 0)
@@ -41,15 +37,3 @@ offset_top = 260.0
 offset_right = 726.0
 offset_bottom = 280.0
 color = Color(0.20784314, 0.15686275, 0.09411765, 1)
-
-[node name="Pickup" parent="." unique_id=201227829 instance=ExtResource("5_gkjmk")]
-position = Vector2(466, 236)
-item_data = ExtResource("6_a0yqt")
-
-[node name="Pickup2" parent="." unique_id=1149646924 instance=ExtResource("5_gkjmk")]
-position = Vector2(577, 236)
-item_data = ExtResource("7_e5teb")
-
-[node name="Pickup3" parent="." unique_id=936524145 instance=ExtResource("5_gkjmk")]
-position = Vector2(666, 236)
-item_data = ExtResource("8_o5spt")

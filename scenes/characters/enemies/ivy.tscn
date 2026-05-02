@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bbed05m5beihj"]
 
 [ext_resource type="Script" uid="uid://8g7gguh5jby6" path="res://scripts/enemies/ivy.gd" id="1_5jele"]
+[ext_resource type="Texture2D" uid="uid://1acg0utq7qvg" path="res://assets/sprites/дерево.png" id="2_fup1p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rxn32"]
 radius = 12.0
@@ -15,11 +16,10 @@ fear_tags = Array[String](["poison", "magic"])
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1453553300]
 shape = SubResource("CircleShape2D_rxn32")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1061470656]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="ColorRect" type="Sprite2D" parent="." unique_id=1404569019]
+position = Vector2(0.9999907, 3.124998)
+scale = Vector2(0.03061226, 0.026601244)
+texture = ExtResource("2_fup1p")
 metadata/_edit_use_anchors_ = true
 
 [node name="DamageZone" type="Area2D" parent="." unique_id=1479562377]

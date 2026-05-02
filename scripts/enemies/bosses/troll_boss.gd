@@ -4,8 +4,8 @@ extends BaseBoss
 var is_casting: bool = false
  
 var projectile_scene = preload("res://scenes/mechanics/enemy_projectile.tscn")
-var puddle_scene     = preload("res://scenes/mechanics/toxic_puddle.tscn")
- 
+var puddle_scene = preload("res://scenes/mechanics/toxic_puddle.tscn")
+@onready var anim = $ColorRect
 func _ready():
 	super() 
 	attack_loop()
@@ -24,11 +24,11 @@ func attack_loop():
 		if player == null: break
  
 		is_casting = true
-		color_rect.color = Color(1, 1, 0) # Желтеет — готовится к касту
+		anim.modulate = Color(1, 1, 0) # Желтеет — готовится к касту
 		await get_tree().create_timer(1.0).timeout
 		if not is_instance_valid(self): return
  
-		color_rect.color = Color(0.2, 0.4, 0.2)
+		anim.modulate = Color(0.2, 0.4, 0.2)
  
 		if randf() > 0.5:
 			cast_nova()

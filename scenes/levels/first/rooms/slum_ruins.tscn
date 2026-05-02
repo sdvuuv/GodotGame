@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_76ojr"]
 [ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_vkpnd"]
 [ext_resource type="PackedScene" uid="uid://dwcmn5msegol" path="res://scenes/levels/destructible_box.tscn" id="5_3v4cu"]
+[ext_resource type="Texture2D" uid="uid://d4kxy6qcy3gdi" path="res://assets/rooms/broken_col.png" id="6_i7vst"]
 
 [node name="SlumRuins" type="Node2D" unique_id=1179586345]
 position = Vector2(-1, 0)
@@ -15,7 +16,7 @@ wall_color = Color(0.1764706, 0.23921569, 0.16470589, 1)
 floor_color = Color(0.08627451, 0.078431375, 0.0627451, 1)
 
 [node name="Player" parent="." unique_id=690924601 instance=ExtResource("3_76ojr")]
-position = Vector2(576, 320)
+position = Vector2(585, 352)
 
 [node name="BottomDoor" parent="." unique_id=1157205798 groups=["doors"] instance=ExtResource("4_vkpnd")]
 position = Vector2(577, 624)
@@ -55,23 +56,14 @@ position = Vector2(281, 144)
 [node name="Destructible4" parent="." unique_id=782364591 instance=ExtResource("5_3v4cu")]
 position = Vector2(881, 520)
 
-[node name="Rubble" type="ColorRect" parent="." unique_id=1442088797]
-offset_left = 73.0
-offset_top = 192.0
-offset_right = 90.0
-offset_bottom = 240.0
-color = Color(0.1764706, 0.14117648, 0.09411765, 1)
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=747194781]
+texture_filter = 1
+position = Vector2(449, 176)
+scale = Vector2(2, 1.875)
+texture = ExtResource("6_i7vst")
 
-[node name="Rubble2" type="ColorRect" parent="." unique_id=1236541145]
-offset_left = 1073.0
-offset_top = 400.0
-offset_right = 1090.0
-offset_bottom = 448.0
-color = Color(0.1764706, 0.14117648, 0.09411765, 1)
-
-[node name="Rubble3" type="ColorRect" parent="." unique_id=777726784]
-offset_left = 385.0
-offset_top = 88.0
-offset_right = 402.0
-offset_bottom = 136.0
-color = Color(0.1764706, 0.14117648, 0.09411765, 1)
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1489893693]
+texture_filter = 1
+position = Vector2(985, 400)
+scale = Vector2(2, 1.875)
+texture = ExtResource("6_i7vst")

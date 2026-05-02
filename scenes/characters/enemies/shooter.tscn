@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bysih7fkmuam3"]
 
 [ext_resource type="Script" uid="uid://kahmocqmh82l" path="res://scripts/enemies/shooter.gd" id="1_g3e0r"]
+[ext_resource type="Texture2D" uid="uid://bvt3t4jbdkf2h" path="res://assets/sprites/monster_c.png" id="2_eql7k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rxn32"]
 radius = 12.0
@@ -15,12 +16,11 @@ fear_tags = Array[String](["undead", "magic"])
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1453553300]
 shape = SubResource("CircleShape2D_rxn32")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1061470656]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-color = Color(0.15686275, 1, 1, 1)
+[node name="ColorRect" type="Sprite2D" parent="." unique_id=1699518262]
+texture_filter = 1
+position = Vector2(-0.9999981, -9)
+scale = Vector2(2.09375, 1.875)
+texture = ExtResource("2_eql7k")
 metadata/_edit_use_anchors_ = true
 
 [node name="DamageZone" type="Area2D" parent="." unique_id=1479562377]

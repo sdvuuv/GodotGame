@@ -1,12 +1,15 @@
 [gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://briaqlwue5h45"]
 
+[ext_resource type="Texture2D" uid="uid://ci3tue11tse8a" path="res://assets/sprites/Mielle_sprite.png" id="1_3a8py"]
 [ext_resource type="Script" uid="uid://crdahgfetqi6p" path="res://scripts/characters/character_data.gd" id="1_odkyh"]
+[ext_resource type="SpriteFrames" uid="uid://bmne5e0uqdw5k" path="res://assets/sprites/Mielle_sprite_frames.tres" id="3_3v6es"]
+[ext_resource type="Texture2D" uid="uid://d6v8l8re5th6" path="res://assets/sprites/scythe.png" id="4_b87hc"]
 
 [resource]
 script = ExtResource("1_odkyh")
 id = 1
-character_name = "Фрося"
-description = "????"
+character_name = "Mielle"
+description = "a distraught girl raised by the horrors of dungeons"
 placeholder_color = Color(0.73274165, 0.5985005, 0.7405503, 1)
 feared_tags = Array[String](["stone"])
 max_sanity = 50.0
@@ -15,4 +18,9 @@ attack_damage = 5.0
 attack_cooldown = 0.1
 is_melee = true
 has_custom_sanity_behavior = true
+portrait = ExtResource("1_3a8py")
+sprite_frames = ExtResource("3_3v6es")
+weapon_sprite = ExtResource("4_b87hc")
+weapon_scale = Vector2(3, 3)
+weapon_offset = Vector2(30, 5)
 metadata/_custom_type_script = "uid://crdahgfetqi6p"

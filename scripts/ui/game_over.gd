@@ -9,7 +9,6 @@ func _ready():
 	label.modulate.a     = 0.0
 	btn_retry.modulate.a = 0.0
 	btn_menu.modulate.a  = 0.0
-	label.modulate.a = 1.0
 	_animate()
 
 func _animate():

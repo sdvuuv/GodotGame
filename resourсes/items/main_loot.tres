@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LootTable" format=3 uid="uid://dnhtqrsev3gvj"]
+[gd_resource type="Resource" script_class="LootTable" format=3 uid="uid://bbvd5fgdk7h8n"]
 
 [ext_resource type="Script" uid="uid://dsvrutroytu1c" path="res://scripts/mechanics/item_data.gd" id="1_yyla3"]
 [ext_resource type="Resource" uid="uid://bvc7l4dgo048v" path="res://resourсes/items/flask.tres" id="2_0nxqw"]
@@ -29,4 +29,5 @@ script = ExtResource("2_alqe1")
 consumables = Array[ExtResource("1_yyla3")]([ExtResource("2_0nxqw"), ExtResource("3_k8ojq"), ExtResource("4_06473"), ExtResource("5_hyd1a"), ExtResource("6_3l53t"), ExtResource("7_5yth0"), ExtResource("8_354su"), ExtResource("9_efwvf"), ExtResource("10_06mbk")])
 melee_items = Array[ExtResource("1_yyla3")]([ExtResource("5_hfnso"), ExtResource("12_yy8qn"), ExtResource("13_ww35g"), ExtResource("14_5c181"), ExtResource("15_1odkh"), ExtResource("16_xt2rk")])
 ranged_items = Array[ExtResource("1_yyla3")]([ExtResource("6_20y30"), ExtResource("18_s5wnv"), ExtResource("19_ndgui"), ExtResource("20_sslhj"), ExtResource("21_a7tkq"), ExtResource("22_53212")])
+shop_items = Array[ExtResource("1_yyla3")]([ExtResource("4_06473"), ExtResource("5_hfnso"), ExtResource("5_hyd1a"), ExtResource("6_20y30"), ExtResource("12_yy8qn"), ExtResource("6_3l53t")])
 metadata/_custom_type_script = "uid://bnomqne3elphe"

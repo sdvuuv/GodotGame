@@ -1,0 +1,122 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://lf6bggbchudd"]
+
+[ext_resource type="Texture2D" uid="uid://c7rfsbanxnos0" path="res://assets/enemies/guard/attack1_1.png" id="1_kla2n"]
+[ext_resource type="Texture2D" uid="uid://cbttqgj6xrnek" path="res://assets/enemies/guard/attack1_2.png" id="2_mi0jd"]
+[ext_resource type="Texture2D" uid="uid://r5dunw7nf1h0" path="res://assets/enemies/guard/attack1_3.png" id="3_myuau"]
+[ext_resource type="Texture2D" uid="uid://n886y31cuhiy" path="res://assets/enemies/guard/attack1_4.png" id="4_dp50j"]
+[ext_resource type="Texture2D" uid="uid://l6c3nbdt8hvj" path="res://assets/enemies/guard/attack1_5.png" id="5_ot8wg"]
+[ext_resource type="Texture2D" uid="uid://c321pces8qihb" path="res://assets/enemies/guard/attack1_6.png" id="6_asbhx"]
+[ext_resource type="Texture2D" uid="uid://byj60jymq0w16" path="res://assets/enemies/guard/fall_back_1.png" id="7_vi1re"]
+[ext_resource type="Texture2D" uid="uid://cbnndpjxxval5" path="res://assets/enemies/guard/fall_back_2.png" id="8_4egqb"]
+[ext_resource type="Texture2D" uid="uid://c3h5itq46v6ul" path="res://assets/enemies/guard/fall_back_3.png" id="9_5o37k"]
+[ext_resource type="Texture2D" uid="uid://c6lsq3ei2moaq" path="res://assets/enemies/guard/fall_back_4.png" id="10_3udmk"]
+[ext_resource type="Texture2D" uid="uid://cs5bpvrlkjepv" path="res://assets/enemies/guard/fall_back_5.png" id="11_1dkno"]
+[ext_resource type="Texture2D" uid="uid://lb41ttyckorh" path="res://assets/enemies/guard/hit_1.png" id="12_3q288"]
+[ext_resource type="Texture2D" uid="uid://cdhirbsi4cmsi" path="res://assets/enemies/guard/hit_2.png" id="13_8a4sj"]
+[ext_resource type="Texture2D" uid="uid://c0e7m6ihbieku" path="res://assets/enemies/guard/hit_3.png" id="14_qtb85"]
+[ext_resource type="Texture2D" uid="uid://cq6fvlexmt51n" path="res://assets/enemies/guard/ready_1.png" id="15_nhfvh"]
+[ext_resource type="Texture2D" uid="uid://bbl418ywiuyvj" path="res://assets/enemies/guard/ready_2.png" id="16_1vqw1"]
+[ext_resource type="Texture2D" uid="uid://cnouaeat7jolc" path="res://assets/enemies/guard/ready_3.png" id="17_hyusn"]
+[ext_resource type="Texture2D" uid="uid://b40uwtl2qn7nk" path="res://assets/enemies/guard/run_1.png" id="18_pvx44"]
+[ext_resource type="Texture2D" uid="uid://beasa3js2rbrq" path="res://assets/enemies/guard/run_2.png" id="19_7e52b"]
+[ext_resource type="Texture2D" uid="uid://b5dn1868ge5ll" path="res://assets/enemies/guard/run_3.png" id="20_2fq8u"]
+[ext_resource type="Texture2D" uid="uid://03xotw58wix5" path="res://assets/enemies/guard/run_4.png" id="21_ohndl"]
+[ext_resource type="Texture2D" uid="uid://cfi6ep7ivfrij" path="res://assets/enemies/guard/run_5.png" id="22_5a1kx"]
+[ext_resource type="Texture2D" uid="uid://bk5kmyk6mfk4s" path="res://assets/enemies/guard/run_6.png" id="23_tsk6d"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kla2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mi0jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_myuau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dp50j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ot8wg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_asbhx")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_vi1re")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4egqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5o37k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3udmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1dkno")
+}],
+"loop": true,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_3q288")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8a4sj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qtb85")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_nhfvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1vqw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_hyusn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_pvx44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7e52b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_2fq8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ohndl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5a1kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_tsk6d")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]

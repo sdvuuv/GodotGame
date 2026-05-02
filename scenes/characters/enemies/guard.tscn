@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cbkwymocvlyb6"]
 
 [ext_resource type="Script" uid="uid://cy5pqc411fb31" path="res://scripts/enemies/guard.gd" id="1_emjg6"]
+[ext_resource type="SpriteFrames" uid="uid://lf6bggbchudd" path="res://assets/sprites/guard.tres" id="2_ph836"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_emjg6"]
 
@@ -15,12 +16,12 @@ fear_tags = Array[String](["elfian", "undead"])
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_emjg6")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1061470656]
-offset_left = -32.0
-offset_top = -63.0
-offset_right = 32.0
-offset_bottom = 63.0
-color = Color(0.25501838, 0.13486797, 0.046119615, 1)
+[node name="ColorRect" type="AnimatedSprite2D" parent="." unique_id=504605691]
+texture_filter = 1
+position = Vector2(1, -21)
+scale = Vector2(4.17, 5.6250005)
+sprite_frames = ExtResource("2_ph836")
+animation = &"death"
 metadata/_edit_use_anchors_ = true
 
 [node name="DamageZone" type="Area2D" parent="." unique_id=1479562377]

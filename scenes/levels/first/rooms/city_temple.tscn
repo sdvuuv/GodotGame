@@ -4,14 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://cidnwutc5i2yd" path="res://scenes/levels/room_boundary.tscn" id="2_6d7bd"]
 [ext_resource type="PackedScene" uid="uid://b1s8sqshxhr5d" path="res://scenes/characters/Player.tscn" id="3_gol30"]
 [ext_resource type="PackedScene" uid="uid://odm7coyy178q" path="res://scenes/levels/door.tscn" id="4_75hu7"]
+[ext_resource type="PackedScene" uid="uid://duxuksu645fm3" path="res://scenes/levels/destructible.tscn" id="5_q5csp"]
+[ext_resource type="Texture2D" uid="uid://dmprq101c1sg5" path="res://assets/rooms/statue.png" id="6_abqk6"]
+[ext_resource type="Texture2D" uid="uid://d0eyxifmi85bm" path="res://assets/rooms/bench.png" id="7_jpadb"]
+[ext_resource type="Texture2D" uid="uid://d4kxy6qcy3gdi" path="res://assets/rooms/broken_col.png" id="8_ajy5f"]
 
 [node name="Temple" type="Node2D" unique_id=1179586345]
 position = Vector2(-1, 0)
 script = ExtResource("1_n58dn")
 
 [node name="RoomBoundary" parent="." unique_id=1960775909 instance=ExtResource("2_6d7bd")]
-wall_color = Color(0.23921569, 0.12156863, 0.30980393, 1)
-floor_color = Color(0.07058824, 0.0627451, 0.101960786, 1)
+wall_color = Color(1, 1, 1, 0.9019608)
+floor_color = Color(1, 1, 1, 1)
 
 [node name="Player" parent="." unique_id=690924601 instance=ExtResource("3_gol30")]
 position = Vector2(576, 320)
@@ -30,45 +34,41 @@ rotation = 1.5707964
 position = Vector2(17, 320)
 rotation = 1.5707964
 
-[node name="Column" type="ColorRect" parent="." unique_id=185181051]
-offset_left = 128.0
-offset_top = 32.0
-offset_right = 193.0
-offset_bottom = 192.0
-color = Color(0.16470589, 0.14509805, 0.20784314, 1)
+[node name="Destructible" parent="." unique_id=1561250726 instance=ExtResource("5_q5csp")]
+position = Vector2(305, 88)
 
-[node name="Column2" type="ColorRect" parent="." unique_id=828498197]
-offset_left = 961.0
-offset_top = 448.0
-offset_right = 1026.0
-offset_bottom = 608.0
-color = Color(0.16470589, 0.14509805, 0.20784314, 1)
+[node name="Destructible2" parent="." unique_id=265269665 instance=ExtResource("5_q5csp")]
+position = Vector2(985, 88)
 
-[node name="Column3" type="ColorRect" parent="." unique_id=1823319066]
-offset_left = 961.0
-offset_top = 32.0
-offset_right = 1026.0
-offset_bottom = 192.0
-color = Color(0.16470589, 0.14509805, 0.20784314, 1)
+[node name="Destructible3" parent="." unique_id=707308739 instance=ExtResource("5_q5csp")]
+position = Vector2(193, 544)
 
-[node name="Column4" type="ColorRect" parent="." unique_id=929400490]
-offset_left = 129.0
-offset_top = 448.0
-offset_right = 194.0
-offset_bottom = 608.0
-color = Color(0.16470589, 0.14509805, 0.20784314, 1)
+[node name="Destructible4" parent="." unique_id=850392473 instance=ExtResource("5_q5csp")]
+position = Vector2(1017, 536)
 
-[node name="Altar" type="ColorRect" parent="." unique_id=2146249873]
-offset_left = 497.0
-offset_top = 288.0
-offset_right = 665.0
-offset_bottom = 352.0
-color = Color(0.23921569, 0.12156863, 0.30980393, 1)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=344617745]
+texture = ExtResource("6_abqk6")
 
-[node name="npc" type="ColorRect" parent="." unique_id=1287785402]
-z_index = 2
-offset_left = 721.0
-offset_top = 224.0
-offset_right = 761.0
-offset_bottom = 328.0
-color = Color(0.6901961, 0.5019608, 0.9411765, 1)
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=117054953]
+texture_filter = 1
+position = Vector2(273, 344)
+scale = Vector2(2, 2.25)
+texture = ExtResource("7_jpadb")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1511968583]
+texture_filter = 1
+position = Vector2(377, 132)
+scale = Vector2(2, 1.875)
+texture = ExtResource("8_ajy5f")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=715474001]
+texture_filter = 1
+position = Vector2(897, 128)
+scale = Vector2(2, 1.875)
+texture = ExtResource("8_ajy5f")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1429431371]
+texture_filter = 1
+position = Vector2(689, 267.00003)
+scale = Vector2(2.5, 2.4374998)
+texture = ExtResource("6_abqk6")

@@ -1,12 +1,15 @@
 [gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://dbl5xlsdljuv0"]
 
 [ext_resource type="Script" uid="uid://crdahgfetqi6p" path="res://scripts/characters/character_data.gd" id="1_au581"]
+[ext_resource type="Texture2D" uid="uid://btylcs6cnivsv" path="res://assets/sprites/Em.png" id="1_e2c4o"]
+[ext_resource type="SpriteFrames" uid="uid://cptu20jrnh4fo" path="res://assets/sprites/4_sprite_frames.tres" id="3_5yt3x"]
+[ext_resource type="Texture2D" uid="uid://dfj4i2fxvbxqu" path="res://assets/sprites/staff.png" id="4_0376p"]
 
 [resource]
 script = ExtResource("1_au581")
 id = 4
-character_name = "Глеб"
-description = "хлеп"
+character_name = "Aenor"
+description = "a young mage with ambitions"
 placeholder_color = Color(0.64774835, 0.707239, 0.69309527, 1)
 feared_tags = Array[String](["undead"])
 max_hp = 70.0
@@ -15,4 +18,9 @@ attack_damage = 17.0
 attack_cooldown = 0.7
 projectile_speed = 350.0
 projectile_lifespan = 0.4
+portrait = ExtResource("1_e2c4o")
+sprite_frames = ExtResource("3_5yt3x")
+weapon_sprite = ExtResource("4_0376p")
+weapon_scale = Vector2(2, 2)
+weapon_offset = Vector2(60, 0)
 metadata/_custom_type_script = "uid://crdahgfetqi6p"

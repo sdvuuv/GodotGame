@@ -37,6 +37,7 @@ func reset():
 		return
 
 	current_hp        = current_character_data.max_hp
+	current_sanity    = current_character_data.max_sanity
 	bonus_damage      = 0.0
 	bonus_speed       = 0.0
 	extra_projectiles = 0

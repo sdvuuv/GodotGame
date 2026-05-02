@@ -27,6 +27,10 @@ player=""
 doors=""
 spawn_points=""
 
+[gui]
+
+theme/custom_font="uid://d2arjk5fdvssh"
+
 [input]
 
 move_left={

@@ -11,6 +11,8 @@ position = Vector2(-1, 0)
 script = ExtResource("1_lrly5")
 
 [node name="RoomBoundary" parent="." unique_id=1960775909 instance=ExtResource("5_memdn")]
+wall_color = Color(0.83524406, 0.82052094, 0.8826072, 1)
+floor_color = Color(1, 1, 1, 1)
 
 [node name="Player" parent="." unique_id=690924601 instance=ExtResource("2_outuj")]
 position = Vector2(576, 320)
