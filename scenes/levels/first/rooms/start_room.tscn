@@ -24,6 +24,7 @@ position = Vector2(576, 624)
 position = Vector2(576, 16)
 
 [node name="SomeGuy" type="ColorRect" parent="." unique_id=1301406678]
+visible = false
 z_index = 2
 offset_left = 112.0
 offset_top = 72.0

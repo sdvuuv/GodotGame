@@ -29,25 +29,23 @@ var sanity_drain_timer: float = 0.0
 
 func _ready():
 	if Global.current_character_data != null:
-		speed = Global.current_character_data.move_speed + Global.bonus_speed
-		damage = Global.current_character_data.attack_damage + Global.bonus_damage
+		speed             = Global.current_character_data.move_speed + Global.bonus_speed
+		damage            = Global.current_character_data.attack_damage + Global.bonus_damage
 		attack_cooldown_timer.wait_time = Global.current_character_data.attack_cooldown
 		extra_projectiles = Global.extra_projectiles
-
 		is_melee_character = Global.current_character_data.is_melee
-		weapon_type = Global.current_character_data.melee_weapon_type
+		weapon_type       = Global.current_character_data.melee_weapon_type
+		weapon.scale      = Global.current_character_data.weapon_scale
+		weapon.position   = Global.current_character_data.weapon_offset
+		hp                = Global.current_hp
 
-	if Global.current_character_data != null:
-		weapon.scale = Global.current_character_data.weapon_scale
-		weapon.position = Global.current_character_data.weapon_offset
+		if Global.current_character_data.sprite_frames != null:
+			anim.sprite_frames = Global.current_character_data.sprite_frames
+			anim.play("idle")
+		if Global.current_character_data.weapon_sprite != null:
+			weapon.texture = Global.current_character_data.weapon_sprite
 
-		hp = Global.current_hp
 	Global.sanity_changed.connect(_on_sanity_changed)
-	if Global.current_character_data != null and Global.current_character_data.sprite_frames != null:
-		anim.sprite_frames = Global.current_character_data.sprite_frames
-		anim.play("idle")
-	if Global.current_character_data != null and Global.current_character_data.weapon_sprite != null:
-		weapon.texture = Global.current_character_data.weapon_sprite
 func _on_sanity_changed(new_sanity: float):
 	if Global.current_character_data == null: return
 	var max_s = Global.current_character_data.max_sanity
