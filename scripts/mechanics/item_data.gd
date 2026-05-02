@@ -18,3 +18,4 @@ class_name ItemData
 @export_category("Расходники")
 @export var add_bombs: int = 0
 @export var add_cleansers: int = 0
+@export var icon: Texture2D
