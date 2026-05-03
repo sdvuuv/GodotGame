@@ -157,28 +157,28 @@ func _process(delta):
 func _check_fear_drain(delta: float):
 	if Global.current_character_data == null: return
 
-	var enemies = get_tree().get_nodes_in_group("enemy")
-	if enemies.is_empty():
-		sanity_drain_timer = 0.0
-		return
+	var feared_enemy_present = false
+	var feared_tags = Global.current_character_data.feared_tags
 
-	var drain_rate = Global.current_character_data.sanity_drain_per_second
-
-	if not Global.current_character_data.feared_tags.is_empty():
-		for enemy in enemies:
+	if not feared_tags.is_empty():
+		for enemy in get_tree().get_nodes_in_group("enemy"):
 			if not is_instance_valid(enemy): continue
 			var tags = enemy.get("fear_tags")
 			if tags == null: continue
 			for tag in tags:
-				if tag in Global.current_character_data.feared_tags:
-					drain_rate *= 1.5
+				if tag in feared_tags:
+					feared_enemy_present = true
 					break
-			if drain_rate > Global.current_character_data.sanity_drain_per_second: break
+			if feared_enemy_present: break
+
+	if not feared_enemy_present:
+		sanity_drain_timer = 0.0
+		return
 
 	sanity_drain_timer += delta
 	if sanity_drain_timer >= 1.0:
 		sanity_drain_timer = 0.0
-		Global.current_sanity -= drain_rate
+		Global.current_sanity -= Global.current_character_data.sanity_drain_per_second
 
 func take_damage(amount: float):
 	if is_dead or not invincibility_timer.is_stopped(): return

@@ -6,6 +6,11 @@ extends Area2D
 var default_texture = preload("res://assets/sprites/item_0_19.png")
 
 func _ready():
+	var room_pos = FloorManager.current_room_pos
+	if FloorManager.collected_pickups.get(room_pos, []).has(name):
+		queue_free()
+		return
+
 	if item_data == null:
 		print("[Pickup] ОШИБКА: item_data = null!")
 		return
@@ -33,6 +38,7 @@ func _create_price_label():
 	label.add_theme_color_override("font_outline_color", Color(0, 0, 0))
 	label.add_theme_constant_override("outline_size", 3)
 	add_child(label)
+	label.reset_size()
 
 func _on_body_entered(body):
 	if not body.is_in_group("player"): return
@@ -49,5 +55,9 @@ func _on_body_entered(body):
 			if is_instance_valid(self):
 				color_rect.modulate = Color(1, 1, 1)
 	else:
+		var room_pos = FloorManager.current_room_pos
+		if not FloorManager.collected_pickups.has(room_pos):
+			FloorManager.collected_pickups[room_pos] = []
+		FloorManager.collected_pickups[room_pos].append(name)
 		body.collect_item(item_data)
 		queue_free()

@@ -93,9 +93,10 @@ const SLUM_SIDE_RIGHT_POOL: Array = [
 # ─────────────────────────────────────────────────────────────
 #  Состояние
 # ─────────────────────────────────────────────────────────────
-var map_data:      Dictionary = {}   # Vector2i → RoomType
-var cleared_rooms: Dictionary = {}   # комнаты без врагов
-var visited_rooms: Dictionary = {}   # комнаты, в которых игрок уже был
+var map_data:         Dictionary = {}   # Vector2i → RoomType
+var cleared_rooms:    Dictionary = {}   # комнаты без врагов
+var visited_rooms:    Dictionary = {}   # комнаты, в которых игрок уже был
+var collected_pickups: Dictionary = {}  # Vector2i → Array[String] (имена подобранных pickup-узлов)
 var current_room_pos: Vector2i = Vector2i.ZERO
 
 var _city_garden_placed: bool = false
@@ -108,6 +109,7 @@ func generate_first_floor() -> void:
 	map_data.clear()
 	cleared_rooms.clear()
 	visited_rooms.clear()
+	collected_pickups.clear()
 	_city_garden_placed = false
 	_slum_fire_placed   = false
 	current_room_pos    = Vector2i.ZERO

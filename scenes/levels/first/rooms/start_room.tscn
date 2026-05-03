@@ -46,7 +46,7 @@ offset_left = 96.0
 offset_top = 456.0
 offset_right = 569.0
 offset_bottom = 557.0
-text = "       WASD — движение
-       Стрелки — атака
-       E — взаимодействие
-       Бомба и камень очищения — разрушают препятствия"
+text = "       WASD — move
+       Arrow keys — attack
+       E — interact
+       Bomb and cleansing stone — destroy obstacles"

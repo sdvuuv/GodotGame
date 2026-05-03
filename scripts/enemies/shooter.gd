@@ -13,7 +13,6 @@ const WANDER_SPEED_MULT = 0.5
 
 func _ready():
 	super()
-	shoot_timer.timeout.connect(_on_shoot_timer_timeout)
 	shoot_timer.start()
 	_pick_new_wander_direction()
 

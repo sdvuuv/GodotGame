@@ -17,8 +17,8 @@ fear_tags = Array[String](["poison", "magic"])
 shape = SubResource("CircleShape2D_rxn32")
 
 [node name="ColorRect" type="Sprite2D" parent="." unique_id=1404569019]
-position = Vector2(0.9999907, 3.124998)
-scale = Vector2(0.03061226, 0.026601244)
+position = Vector2(0.9999981, -4.999998)
+scale = Vector2(0.054081652, 0.058884297)
 texture = ExtResource("2_fup1p")
 metadata/_edit_use_anchors_ = true
 

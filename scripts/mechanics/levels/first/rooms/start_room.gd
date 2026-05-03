@@ -16,5 +16,5 @@ func _on_show_dialogue(text: String) -> void:
 	control_hints.modulate = Color("#e0d0ff")
 
 func _on_hide_dialogue(_dummy = null) -> void:
-	control_hints.text = "WASD — движение\nСтрелки — атака\nE — взаимодействие"
+	control_hints.text = "WASD — move\nArrow keys — attack\nE — interact"
 	control_hints.modulate = Color("#8a7aaa")

@@ -5,7 +5,6 @@ var puddle_scene = preload("res://scenes/mechanics/toxic_puddle.tscn")
 @onready var anim = $ColorRect
 func _ready():
 	super()
-	shoot_timer.timeout.connect(_on_shoot_timer_timeout)
 	shoot_timer.start()
 
 func _on_shoot_timer_timeout():

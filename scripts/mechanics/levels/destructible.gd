@@ -32,7 +32,7 @@ func try_destroy():
 			interaction_hint_changed.emit(false, "")
 			shatter()
 		else:
-			interaction_hint_changed.emit(true, "Нет взрывных флаконов!")
+			interaction_hint_changed.emit(true, "No bombs!")
  
 	elif obstacle_type == 1: 
 		if Global.cleansers > 0:
@@ -40,7 +40,7 @@ func try_destroy():
 			interaction_hint_changed.emit(false, "")
 			shatter()
 		else:
-			interaction_hint_changed.emit(true, "Нет камней очищения!")
+			interaction_hint_changed.emit(true, "No cleansing stones!")
  
 func shatter():
 	if is_secret:
@@ -66,8 +66,8 @@ func spawn_item(item: ItemData):
 # Возвращает подсказку в зависимости от типа препятствия и наличия ресурсов
 func _get_hint_text() -> String:
 	if obstacle_type == 0:
-		return "E — Взорвать (флаконов: %d)" % Global.bombs
+		return "E — Detonate (bombs: %d)" % Global.bombs
 	elif obstacle_type == 1:
-		return "E — Рассеять туман (камней: %d)" % Global.cleansers
-	return "E — Взаимодействовать"
+		return "E — Dispel fog (stones: %d)" % Global.cleansers
+	return "E — Interact"
  

@@ -2,7 +2,7 @@ extends Area2D
 
 var player_in_range: bool = false
 
-@export_multiline var dialogue: String = "Добро пожаловать в город, чужестранец.\nЗдесь давно неспокойно — стражники\nпревратились в послушных кукол,\nа в трущобах завёлся кто-то страшный."
+@export_multiline var dialogue: String = "Welcome to the city, stranger.\nThings have been uneasy here for a while —\nthe guards have become obedient puppets,\nand something terrible lurks in the slums."
 
 signal show_text(text: String)
 signal hide_text()
